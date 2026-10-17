@@ -1,146 +1,87 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
+import React from "react";
 import {
-  Zap,
-  Server,
-  ArrowRight,
-  CheckCircle2,
-  ExternalLink,
-  MessageSquare,
-  Radio,
-  Layers,
-  ChevronRight,
-  Workflow,
-  Database,
-} from "lucide-react";
+  TbBrandWhatsapp,
+  TbArrowUpRight,
+  TbShieldLock,
+  TbCheck,
+  TbTerminal2,
+} from "react-icons/tb";
+import {
+  SiDiscord,
+  SiTiktok,
+} from "react-icons/si";
+import { FiArrowRight, FiZap } from "react-icons/fi";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<string>("all");
-
   const WA_LINK =
     "https://wa.me/6281220619281?text=Halo%20Akar%20Poros%2C%20saya%20tertarik%20konsultasi%20solusi%20AI%20dan%20pilot%20trial%20untuk%20bisnis%20saya.";
 
-  const products = [
-    {
-      id: "whatsapp-ops",
-      category: "Customer Operations",
-      name: "Autonomous WhatsApp Ops",
-      badge: "L4 Autonomous Agent",
-      status: "Production Ready",
-      subdomain: "wa.akarporos.tech",
-      description:
-        "Asisten WhatsApp bisnis otonom 24/7. Menjawab konsultasi, jadwal, dan booking tengah malam secara instan, mengkualifikasi leads, dan merekap data otomatis ke Google Sheets & CRM tanpa intervensi manual.",
-      highlights: [
-        "Jawab instan 24 jam (hilangkan loss closing jam malam)",
-        "Sinkronisasi multi-arah Google Sheets, Drive, & database",
-        "Konteks SOP bisnis akurat tanpa halusinasi",
-        "Human handoff pintar jika butuh penanganan khusus",
-      ],
-      idealFor: "Travel Umroh/Haji, Klinik Kesehatan, Salon, Jasa & Konsultan",
-      icon: MessageSquare,
-      color: "emerald",
-    },
-    {
-      id: "alertflow",
-      category: "Real-time Monitoring",
-      name: "AlertFlow Engine",
-      badge: "Live in 8+ Servers",
-      status: "Production Ready",
-      subdomain: "alertflow.akarporos.tech",
-      description:
-        "Mesin radar otonom multi-platform. Memonitor konten fresh TikTok, YouTube Live, dan event webhook tanpa jeda, lalu mem-broadcast notifikasi terkontrol ke Discord & komunitas dengan deduplikasi ketat.",
-      highlights: [
-        "Monotonic ID guard (anti-duplicate & strictly fresh)",
-        "Autonomous watcher loop dengan resilient auto-retry",
-        "Dashboard admin terintegrasi & monitoring instan",
-        "Multi-server tenant isolation di cloud container",
-      ],
-      idealFor: "Komunitas Kreator, Media Network, Trader, Brand Monitoring",
-      icon: Radio,
-      color: "cyan",
-    },
-    {
-      id: "data-pipeline",
-      category: "Data & Intelligence",
-      name: "Custom Data Scraper & Pipeline",
-      badge: "Stealth Architecture",
-      status: "Custom Build",
-      subdomain: null,
-      description:
-        "Arsitektur ekstraksi data publik skala besar dengan bypass proteksi WAF tingkat lanjut. Mengubah jutaan titik data pasar, katalog kompetitor, dan sinyal industri menjadi aliran data bersih siap pakai.",
-      highlights: [
-        "Anti-detection browser cluster & smart proxy rotation",
-        "Structured schema extraction (JSON/PostgreSQL)",
-        "Automated scheduled cron dengan anomaly alerting",
-        "Patuhi batasan etis & kebijakan data publik",
-      ],
-      idealFor: "Market Intelligence, Price Monitoring, Lead Enrichment",
-      icon: Database,
-      color: "purple",
-    },
-    {
-      id: "private-infra",
-      category: "Infrastructure",
-      name: "Private & Self-Hosted AI Infra",
-      badge: "Zero Data Leak",
-      status: "Enterprise Standard",
-      subdomain: null,
-      description:
-        "Deployment sistem AI mandiri di server privat (VPS/On-Premise) milik klien. Menjamin data internal perusahaan tidak pernah bocor ke pihak ketiga melalui isolasi container Pterodactyl/Docker.",
-      highlights: [
-        "100% kepemilikan data & private runtime",
-        "Resource limit per-container (RAM/CPU aman)",
-        "Audit trail lengkap & systemd watchdog auto-heal",
-        "Zero dependency pada langganan software vendor kaku",
-      ],
-      idealFor: "Bisnis Menengah, Korporasi Finansial, Data-Sensitive Orgs",
-      icon: Server,
-      color: "amber",
-    },
-  ];
-
-  const filteredProducts =
-    activeTab === "all"
-      ? products
-      : products.filter((p) => p.category.toLowerCase().includes(activeTab.toLowerCase()));
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-[#090a0f] text-[#f3f4f6] selection:bg-emerald-500/20 selection:text-emerald-300 relative overflow-hidden bg-grid-pattern">
-      {/* Ambient gradient orbs */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-emerald-500/10 via-cyan-500/5 to-transparent blur-[120px] pointer-events-none" />
-      <div className="absolute top-[800px] -left-48 w-[400px] h-[400px] bg-emerald-500/5 blur-[140px] pointer-events-none" />
-      <div className="absolute top-[1400px] -right-48 w-[400px] h-[400px] bg-cyan-500/5 blur-[140px] pointer-events-none" />
+    <div className="min-h-screen bg-[#07090e] text-[#f1f5f9] selection:bg-emerald-500/20 selection:text-emerald-300 font-sans antialiased relative overflow-hidden">
+      {/* Precision ambient background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-b from-emerald-500/10 via-cyan-500/5 to-transparent blur-[140px] pointer-events-none" />
+      <div className="absolute top-[800px] -left-64 w-[500px] h-[500px] bg-emerald-500/5 blur-[160px] pointer-events-none" />
+      <div className="absolute top-[1600px] -right-64 w-[500px] h-[500px] bg-cyan-500/5 blur-[160px] pointer-events-none" />
 
-      {/* Navigation */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-[#090a0f]/80 border-b border-[#1f2438]">
+      {/* Grid line background overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+
+      {/* Navigation — Ultra Clean, No Hash URLs */}
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#07090e]/85 border-b border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center text-black font-black text-sm tracking-tighter group-hover:scale-105 transition-transform">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center text-black font-black text-xs tracking-tight shadow-md shadow-emerald-500/20">
               AP
             </div>
-            <span className="font-bold text-lg tracking-tight text-white flex items-center gap-1.5">
+            <span className="font-bold text-base tracking-tight text-white flex items-center gap-2">
               Akar Poros
               <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 STUDIO
               </span>
             </span>
-          </Link>
+          </div>
 
-          <nav className="hidden md:flex items-center gap-7 text-sm text-[#9ca3af]">
-            <a href="#solusi" className="hover:text-white transition-colors">
-              Produk & Solusi
-            </a>
-            <a href="#filosofi" className="hover:text-white transition-colors">
+          <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-slate-400">
+            <button
+              onClick={() => scrollToSection("solusi")}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
+              Solusi &amp; Produk
+            </button>
+            <button
+              onClick={() => scrollToSection("filosofi")}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
               Filosofi
-            </a>
-            <a href="#keunggulan" className="hover:text-white transition-colors">
-              Mengapa Kami
-            </a>
-            <a href="#arsitek" className="hover:text-white transition-colors">
-              Founder
-            </a>
+            </button>
+            <button
+              onClick={() => scrollToSection("keunggulan")}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
+              Model Jasa
+            </button>
+            <button
+              onClick={() => scrollToSection("arsitek")}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
+              Arsitek
+            </button>
           </nav>
 
           <div className="flex items-center gap-3">
@@ -148,34 +89,43 @@ export default function Home() {
               href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-xs transition-all shadow-lg shadow-emerald-500/20"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.1] text-xs font-semibold text-white transition-all"
             >
-              <Zap className="w-3.5 h-3.5 fill-black" />
-              <span>Pilot Trial 3 Hari</span>
+              <TbBrandWhatsapp className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Kontak</span>
+            </a>
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs transition-all shadow-lg shadow-emerald-500/20"
+            >
+              <FiZap className="w-3.5 h-3.5 fill-black" />
+              <span>Pilot 3 Hari</span>
             </a>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Hero Section — Taste-Skill Typography & Negative Space */}
       <section className="pt-24 pb-20 px-6 max-w-5xl mx-auto text-center relative z-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#11131c] border border-[#1f2438] text-xs text-[#9ca3af] mb-8">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-xs text-slate-400 mb-8 backdrop-blur-md">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="font-mono text-emerald-400 font-semibold tracking-wide uppercase text-[11px]">
-            Autonomous AI Systems & Engineering Studio
+          <span className="font-mono text-emerald-400 text-[11px] font-semibold tracking-wider uppercase">
+            Autonomous Systems &amp; AI Engineering Studio
           </span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.08] mb-6">
           Kami Bangun Sistem AI dari{" "}
           <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
             Akar
           </span>
-          ,<br className="hidden sm:inline" /> Anda Tinggal Skalakan.
+          ,<br /> Anda Tinggal Skalakan.
         </h1>
 
-        <p className="text-base sm:text-xl text-[#9ca3af] max-w-2xl mx-auto leading-relaxed mb-10">
-          Bukan sekadar bot atau software kaku. Kami mengimplementasikan sistem otomasi otonom 24/7 yang menyatu dengan SOP bisnis nyata — dari asisten WhatsApp, radar monitor komunitas, hingga infrastruktur data privat.
+        <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
+          Bukan software kaku yang memaksa Anda beradaptasi. Kami merekayasa solusi AI otonom 24/7 yang menyatu dengan SOP bisnis nyata: asisten WhatsApp tanpa jeda, radar monitor komunitas, dan infrastruktur data privat.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -183,280 +133,459 @@ export default function Home() {
             href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-bold text-sm transition-all shadow-xl shadow-emerald-500/20"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm transition-all shadow-xl shadow-emerald-500/20"
           >
-            <MessageSquare className="w-4 h-4" />
-            <span>Konsultasi Proyek (WhatsApp)</span>
-            <ArrowRight className="w-4 h-4" />
+            <TbBrandWhatsapp className="w-4 h-4 text-black" />
+            <span>Mulai Uji Coba Pilot (WhatsApp)</span>
+            <FiArrowRight className="w-4 h-4" />
           </a>
 
-          <a
-            href="#solusi"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#11131c] hover:bg-[#161a29] border border-[#1f2438] text-white font-medium text-sm transition-all"
+          <button
+            onClick={() => scrollToSection("solusi")}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-white font-medium text-sm transition-all cursor-pointer"
           >
-            <span>Lihat Solusi Siap Pakai</span>
-            <ChevronRight className="w-4 h-4 text-[#9ca3af]" />
-          </a>
+            <span>Jelajahi Solusi Siap Pakai</span>
+            <TbArrowUpRight className="w-4 h-4 text-slate-400" />
+          </button>
         </div>
 
-        {/* Live Metrics Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-16 max-w-3xl mx-auto text-left">
-          <div className="p-4 rounded-xl bg-[#11131c]/70 border border-[#1f2438]/80 backdrop-blur-sm">
-            <div className="text-2xl font-extrabold text-white font-mono">24/7</div>
-            <div className="text-xs text-[#9ca3af] mt-1">Autonomous Runtime</div>
+        {/* Telemetry Status Bar */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-16 max-w-3xl mx-auto text-left">
+          <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm">
+            <div className="text-xl sm:text-2xl font-bold text-white font-mono">24/7</div>
+            <div className="text-xs text-slate-400 mt-0.5">Autonomous Runtime</div>
           </div>
-          <div className="p-4 rounded-xl bg-[#11131c]/70 border border-[#1f2438]/80 backdrop-blur-sm">
-            <div className="text-2xl font-extrabold text-emerald-400 font-mono">&lt; 10s</div>
-            <div className="text-xs text-[#9ca3af] mt-1">Event Latency</div>
+          <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm">
+            <div className="text-xl sm:text-2xl font-bold text-emerald-400 font-mono">&lt; 10s</div>
+            <div className="text-xs text-slate-400 mt-0.5">Event Latency</div>
           </div>
-          <div className="p-4 rounded-xl bg-[#11131c]/70 border border-[#1f2438]/80 backdrop-blur-sm">
-            <div className="text-2xl font-extrabold text-cyan-400 font-mono">100%</div>
-            <div className="text-xs text-[#9ca3af] mt-1">Private Data Isolation</div>
+          <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm">
+            <div className="text-xl sm:text-2xl font-bold text-cyan-400 font-mono">100%</div>
+            <div className="text-xs text-slate-400 mt-0.5">Data Isolation</div>
           </div>
-          <div className="p-4 rounded-xl bg-[#11131c]/70 border border-[#1f2438]/80 backdrop-blur-sm">
-            <div className="text-2xl font-extrabold text-white font-mono">3-Day</div>
-            <div className="text-xs text-[#9ca3af] mt-1">Risk-Free Pilot Trial</div>
+          <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm">
+            <div className="text-xl sm:text-2xl font-bold text-white font-mono">3 Hari</div>
+            <div className="text-xs text-slate-400 mt-0.5">Risk-Free Pilot</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bento Showcase — Asymmetric & Diverse Layout (taste-skill compliant) */}
+      <section id="solusi" className="py-20 px-6 max-w-6xl mx-auto border-t border-white/[0.06]">
+        <div className="mb-12">
+          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 block mb-2">
+            Katalog Produk &amp; Solusi
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Sistem Nyata yang Kami Bangun
+          </h2>
+          <p className="text-sm text-slate-400 mt-2 max-w-xl">
+            Solusi yang sudah teruji melayani operasional aktif, dirancang untuk langsung mendongkrak efisiensi dan pendapatan bisnis.
+          </p>
+        </div>
+
+        {/* Bento Grid Container */}
+        <div className="grid grid-cols-12 gap-5">
+          {/* Bento Card 1: Autonomous WhatsApp Ops (Large, 7 cols) */}
+          <div className="col-span-12 lg:col-span-7 p-7 sm:p-8 rounded-2xl bg-gradient-to-br from-[#0c0f18] to-[#07090e] border border-emerald-500/20 hover:border-emerald-500/40 transition-all flex flex-col justify-between relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/5 blur-[100px] pointer-events-none" />
+
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold tracking-wide uppercase">
+                  Flagship Solution • L4 Agent
+                </span>
+                <span className="text-xs text-slate-500 font-mono">wa.akarporos.tech</span>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                Autonomous WhatsApp Ops
+              </h3>
+              <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                Asisten WhatsApp bisnis otonom 24 jam non-stop. Menjawab konsultasi, harga, dan booking jam 2 pagi secara instan, kualifikasi prospek, dan merekap leads otomatis ke Google Sheets &amp; CRM Anda.
+              </p>
+
+              {/* Simulated Chat & Sheet UI Widget */}
+              <div className="p-4 rounded-xl bg-black/40 border border-white/[0.06] mb-6 font-mono text-xs space-y-2.5">
+                <div className="flex items-center justify-between text-[11px] text-slate-500 pb-2 border-b border-white/[0.05]">
+                  <span className="flex items-center gap-1.5 text-emerald-400">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> WhatsApp Live
+                  </span>
+                  <span>02:14 WIB</span>
+                </div>
+                <div className="text-slate-300">
+                  <span className="text-slate-500">Klien:</span> &quot;Jadwal paket umroh bulan depan masih ada slot?&quot;
+                </div>
+                <div className="text-emerald-300 bg-emerald-950/20 p-2.5 rounded-lg border border-emerald-500/20">
+                  <span className="text-emerald-400 font-bold">Akar Poros Agent:</span> &quot;Tersedia 4 seat untuk keberangkatan 12 Nov (Hotel bintang 5 Mekkah). Mau saya kirimkan detail itinerary lengkapnya ke nomor ini?&quot;
+                </div>
+                <div className="text-[11px] text-cyan-400 flex items-center gap-1 pt-1">
+                  <TbCheck className="w-3.5 h-3.5" />
+                  <span>Lead terekam otomatis ke Google Sheets [ID #8491]</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-300">
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-emerald-400 shrink-0" />
+                  <span>Jawab instan 24 jam tanpa jeda</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-emerald-400 shrink-0" />
+                  <span>Sinkronisasi Google Sheets &amp; CRM</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-emerald-400 shrink-0" />
+                  <span>SOP akurat &amp; bebas halusinasi</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-emerald-400 shrink-0" />
+                  <span>Human handoff cerdas</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-5 border-t border-white/[0.06] flex items-center justify-between">
+              <span className="text-xs text-slate-400">Cocok untuk: Travel Umroh, Klinik, Jasa, UMKM</span>
+              <a
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+              >
+                <span>Coba Demo 3 Hari</span>
+                <TbArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Bento Card 2: AlertFlow Engine (5 cols) */}
+          <div className="col-span-12 lg:col-span-5 p-7 sm:p-8 rounded-2xl bg-gradient-to-br from-[#0c0f18] to-[#07090e] border border-cyan-500/20 hover:border-cyan-500/40 transition-all flex flex-col justify-between relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 blur-[90px] pointer-events-none" />
+
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-semibold tracking-wide uppercase">
+                  Live in 8+ Servers
+                </span>
+                <span className="text-xs text-slate-500 font-mono">alertflow.akarporos.tech</span>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                AlertFlow Engine
+              </h3>
+              <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                Mesin radar multi-platform otonom. Memantau konten fresh TikTok, YouTube Live, dan event webhook tanpa delay, lalu mem-broadcast notifikasi terkontrol ke Discord &amp; komunitas.
+              </p>
+
+              {/* Live Signal Telemetry */}
+              <div className="p-4 rounded-xl bg-black/40 border border-white/[0.06] mb-6 space-y-2 text-xs font-mono">
+                <div className="flex items-center justify-between text-slate-400">
+                  <span className="flex items-center gap-1.5">
+                    <SiTiktok className="text-rose-400" /> Watcher Loop
+                  </span>
+                  <span className="text-cyan-400">Active (15m interval)</span>
+                </div>
+                <div className="flex items-center justify-between text-slate-400">
+                  <span className="flex items-center gap-1.5">
+                    <SiDiscord className="text-indigo-400" /> Target Guilds
+                  </span>
+                  <span className="text-white">8 Production Servers</span>
+                </div>
+                <div className="flex items-center justify-between text-slate-400">
+                  <span className="flex items-center gap-1.5">
+                    <TbShieldLock className="text-emerald-400" /> Guard Filter
+                  </span>
+                  <span className="text-emerald-400">Monotonic &lt; 24h</span>
+                </div>
+              </div>
+
+              <div className="space-y-2 text-xs text-slate-300">
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-cyan-400 shrink-0" />
+                  <span>Deduplikasi ketat (anti spam notif dobel)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-cyan-400 shrink-0" />
+                  <span>Autonomous background watcher loop</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-cyan-400 shrink-0" />
+                  <span>Admin slash command control panel</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-5 border-t border-white/[0.06] flex items-center justify-between">
+              <span className="text-xs text-slate-400">Untuk: Komunitas &amp; Kreator</span>
+              <a
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+              >
+                <span>Pelajari Sistem</span>
+                <TbArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Bento Card 3: Private AI Infrastructure (5 cols) */}
+          <div className="col-span-12 lg:col-span-5 p-7 sm:p-8 rounded-2xl bg-gradient-to-br from-[#0c0f18] to-[#07090e] border border-amber-500/20 hover:border-amber-500/40 transition-all flex flex-col justify-between relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 blur-[90px] pointer-events-none" />
+
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 font-semibold tracking-wide uppercase">
+                  Enterprise Security
+                </span>
+                <span className="text-xs text-slate-500 font-mono">On-Premise Ready</span>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">
+                Private Self-Hosted Infra
+              </h3>
+              <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                Deployment sistem agent AI mandiri di server privat klien (VPS / on-premise). Menjamin data sensitif perusahaan tidak pernah bocor ke pihak ketiga lewat isolasi container terdedikasi.
+              </p>
+
+              <div className="space-y-2.5 text-xs text-slate-300 mb-6">
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-amber-400 shrink-0" />
+                  <span>Isolasi container per-klien (Pterodactyl/Docker)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-amber-400 shrink-0" />
+                  <span>Zero data leakage ke vendor pihak ketiga</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-amber-400 shrink-0" />
+                  <span>Systemd auto-heal watchdog 24/7</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-amber-400 shrink-0" />
+                  <span>Resource limits terukur &amp; anti-OOM crash</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-5 border-t border-white/[0.06] flex items-center justify-between">
+              <span className="text-xs text-slate-400">Untuk: Data-Sensitive Enterprise</span>
+              <a
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-400 hover:text-amber-300 transition-colors"
+              >
+                <span>Konsultasi Infra</span>
+                <TbArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Bento Card 4: Custom Data Intelligence Pipeline (7 cols) */}
+          <div className="col-span-12 lg:col-span-7 p-7 sm:p-8 rounded-2xl bg-gradient-to-br from-[#0c0f18] to-[#07090e] border border-purple-500/20 hover:border-purple-500/40 transition-all flex flex-col justify-between relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-purple-500/5 blur-[100px] pointer-events-none" />
+
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20 font-semibold tracking-wide uppercase">
+                  Data Engine
+                </span>
+                <span className="text-xs text-slate-500 font-mono">Scalable Pipeline</span>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
+                Custom Data Scraper &amp; Pipeline
+              </h3>
+              <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                Ekstraksi data publik skala besar dengan bypass proteksi WAF tingkat lanjut. Mengubah jutaan titik data katalog kompetitor, tren harga, dan sinyal pasar menjadi format terstruktur siap olah.
+              </p>
+
+              {/* Terminal Pipeline Snippet */}
+              <div className="p-4 rounded-xl bg-black/40 border border-white/[0.06] mb-6 font-mono text-xs text-slate-400 space-y-1">
+                <div className="flex items-center gap-2 text-slate-500 mb-2">
+                  <TbTerminal2 className="w-4 h-4 text-purple-400" />
+                  <span>pipeline_runner.py --target=competitor_matrix</span>
+                </div>
+                <div className="text-emerald-400">✓ Browser cluster bypass: Cloudflare Turnstile [OK]</div>
+                <div className="text-slate-300">✓ Ingested: 14,820 SKU records normalized</div>
+                <div className="text-cyan-400">✓ Synced to Neon PostgreSQL database in 1.4s</div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-300">
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-purple-400 shrink-0" />
+                  <span>Stealth browser &amp; smart proxy pool</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-purple-400 shrink-0" />
+                  <span>PostgreSQL &amp; JSON schema pipeline</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-purple-400 shrink-0" />
+                  <span>Scheduled cron &amp; anomaly alerts</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TbCheck className="text-purple-400 shrink-0" />
+                  <span>Patuhi batasan etis data publik</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-5 border-t border-white/[0.06] flex items-center justify-between">
+              <span className="text-xs text-slate-400">Untuk: Market Intel, E-Commerce, Riset</span>
+              <a
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-purple-400 hover:text-purple-300 transition-colors"
+              >
+                <span>Request Pipeline</span>
+                <TbArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Philosophy Section */}
-      <section id="filosofi" className="py-20 px-6 max-w-5xl mx-auto border-t border-[#1f2438]">
+      <section id="filosofi" className="py-20 px-6 max-w-5xl mx-auto border-t border-white/[0.06]">
         <div className="text-center mb-12">
-          <h2 className="text-xs font-mono uppercase tracking-widest text-emerald-400 mb-2">
+          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 block mb-2">
             DNA &amp; Filosofi Rekayasa
-          </h2>
-          <p className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Mengapa Bernama Akar Poros?
-          </p>
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-7 rounded-2xl bg-[#11131c] border border-[#1f2438] relative overflow-hidden group hover:border-emerald-500/40 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-5">
-              <Layers className="w-6 h-6" />
+          <div className="p-8 rounded-2xl bg-[#0c0f18] border border-white/[0.06] hover:border-emerald-500/30 transition-all">
+            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-5 text-xl font-bold font-mono">
+              01
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Akar — Fondasi yang Kokoh</h3>
-            <p className="text-sm text-[#9ca3af] leading-relaxed">
-              Bukan sekadar antarmuka luar yang rapuh. Kami membangun fondasi dari arsitektur backend terdalam: koneksi database terisolasi, self-hosted LLM gateway, dan integrasi data internal yang privat dan tahan benturan.
+            <p className="text-sm text-slate-400 leading-relaxed">
+              Bukan sekadar bot tempelan. Kami membangun fondasi dari arsitektur backend terdalam: koneksi database terisolasi, self-hosted LLM gateway, dan integrasi data internal yang privat, stabil, dan tahan benturan.
             </p>
           </div>
 
-          <div className="p-7 rounded-2xl bg-[#11131c] border border-[#1f2438] relative overflow-hidden group hover:border-cyan-500/40 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5">
-              <Workflow className="w-6 h-6" />
+          <div className="p-8 rounded-2xl bg-[#0c0f18] border border-white/[0.06] hover:border-cyan-500/30 transition-all">
+            <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5 text-xl font-bold font-mono">
+              02
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Poros — Roda Penggerak Tanpa Henti</h3>
-            <p className="text-sm text-[#9ca3af] leading-relaxed">
-              Poros adalah sumbu flywheel yang terus berputar. Begitu sistem dipasang, agent otonom bekerja di latar belakang: memantau sinyal, menjawab prospek bisnis, dan menyinkronkan data tanpa perlu disentuh manual lagi.
+            <h3 className="text-xl font-bold text-white mb-2">Poros — Penggerak Tanpa Henti</h3>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              Poros adalah sumbu flywheel yang terus berputar. Begitu sistem dipasang, agen otonom bekerja di latar belakang: memantau sinyal, menjawab prospek bisnis, dan menyinkronkan data tanpa perlu dipantau manual lagi.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Products & Solutions Section */}
-      <section id="solusi" className="py-20 px-6 max-w-6xl mx-auto border-t border-[#1f2438]">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div>
-            <h2 className="text-xs font-mono uppercase tracking-widest text-emerald-400 mb-2">
-              Katalog Produk &amp; Solusi
-            </h2>
-            <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Sistem Nyata yang Kami Bangun
-            </p>
-          </div>
-
-          {/* Filter Pills */}
-          <div className="flex items-center gap-2 p-1 rounded-xl bg-[#11131c] border border-[#1f2438] self-start md:self-auto text-xs">
-            {["all", "Operations", "Monitoring", "Data", "Infrastructure"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-3 py-1.5 rounded-lg transition-all capitalize font-medium ${
-                  activeTab === tab
-                    ? "bg-emerald-500 text-black font-semibold"
-                    : "text-[#9ca3af] hover:text-white"
-                }`}
-              >
-                {tab === "all" ? "Semua" : tab}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Product Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filteredProducts.map((p) => {
-            const Icon = p.icon;
-            return (
-              <div
-                key={p.id}
-                className="p-7 rounded-2xl bg-[#11131c] border border-[#1f2438] hover:border-[#2d3450] transition-all flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-[#161a29] border border-[#1f2438] flex items-center justify-center text-emerald-400">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <span className="text-[11px] font-mono text-emerald-400 uppercase tracking-wider block">
-                          {p.category}
-                        </span>
-                        <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
-                          {p.name}
-                        </h3>
-                      </div>
-                    </div>
-                    <span className="text-[10px] font-mono px-2 py-1 rounded bg-[#161a29] text-[#9ca3af] border border-[#1f2438]">
-                      {p.badge}
-                    </span>
-                  </div>
-
-                  <p className="text-sm text-[#9ca3af] leading-relaxed mb-6">
-                    {p.description}
-                  </p>
-
-                  <div className="space-y-2.5 mb-6">
-                    {p.highlights.map((h, i) => (
-                      <div key={i} className="flex items-start gap-2.5 text-xs text-[#cbd5e1]">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                        <span>{h}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="pt-5 border-t border-[#1f2438] flex items-center justify-between text-xs">
-                  <div className="text-[#9ca3af]">
-                    <span className="text-[10px] uppercase font-mono block text-[#64748b]">
-                      Target Pengguna
-                    </span>
-                    <span className="font-medium text-[#cbd5e1]">{p.idealFor}</span>
-                  </div>
-
-                  {p.subdomain ? (
-                    <a
-                      href={`https://${p.subdomain}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#161a29] hover:bg-emerald-500 hover:text-black text-white font-semibold transition-all border border-[#1f2438]"
-                    >
-                      <span>Explore</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  ) : (
-                    <a
-                      href={WA_LINK}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#161a29] hover:bg-emerald-500 hover:text-black text-white font-semibold transition-all border border-[#1f2438]"
-                    >
-                      <span>Inquire</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </a>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* The Akar Poros Model — Done For You Service */}
-      <section id="keunggulan" className="py-20 px-6 max-w-5xl mx-auto border-t border-[#1f2438]">
+      {/* Done-For-You Business Model */}
+      <section id="keunggulan" className="py-20 px-6 max-w-5xl mx-auto border-t border-white/[0.06]">
         <div className="text-center mb-14">
-          <h2 className="text-xs font-mono uppercase tracking-widest text-emerald-400 mb-2">
-            Mengapa Bukan SaaS Kaku
+          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 block mb-2">
+            Realitas Pasar Indonesia
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Pendekatan &quot;Terima Beres&quot; Berbasis Dampak
           </h2>
-          <p className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-            Pendekatan &quot;Terima Beres&quot; untuk Pasar Indonesia
+          <p className="text-sm text-slate-400 mt-2 max-w-xl mx-auto">
+            Pasar tidak butuh langganan software rumit yang ditinggal pakai. Pebisnis butuh solusi yang langsung memangkas biaya atau mendongkrak omset.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-xl bg-[#11131c] border border-[#1f2438]">
-            <div className="text-emerald-400 font-mono text-sm mb-3">01 / Done-For-You</div>
-            <h4 className="text-base font-bold text-white mb-2">Terima Ikannya, Bukan Pancing</h4>
-            <p className="text-xs text-[#9ca3af] leading-relaxed">
-              Anda tidak perlu belajar prompt engineering atau menyewa tim teknis mahal. Kami rancang, pasang, dan rawat sistem A–Z hingga langsung menghasilkan dampak bisnis.
+          <div className="p-6 rounded-2xl bg-[#0c0f18] border border-white/[0.06]">
+            <span className="text-emerald-400 font-mono text-xs uppercase tracking-wider block mb-3 font-semibold">
+              Terima Ikannya
+            </span>
+            <h4 className="text-lg font-bold text-white mb-2">Done-For-You Service</h4>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Anda tidak perlu pusing belajar konfigurasi teknis. Tim kami yang merancang, memasang, dan merawat sistem dari A hingga Z.
             </p>
           </div>
 
-          <div className="p-6 rounded-xl bg-[#11131c] border border-[#1f2438]">
-            <div className="text-cyan-400 font-mono text-sm mb-3">02 / Mengikuti SOP Anda</div>
-            <h4 className="text-base font-bold text-white mb-2">Sistem Menyesuaikan Bisnis</h4>
-            <p className="text-xs text-[#9ca3af] leading-relaxed">
-              Bukan memaksa tim Anda belajar software baru. Agen kami beroperasi langsung di kanal yang sudah Anda gunakan: WhatsApp, Google Sheets, Drive, dan email.
+          <div className="p-6 rounded-2xl bg-[#0c0f18] border border-white/[0.06]">
+            <span className="text-cyan-400 font-mono text-xs uppercase tracking-wider block mb-3 font-semibold">
+              Sesuai Kebiasaan
+            </span>
+            <h4 className="text-lg font-bold text-white mb-2">Menyatu dengan SOP</h4>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Bukan memaksa tim Anda belajar software baru. Agen kami beroperasi langsung di kanal yang sudah Anda gunakan: WhatsApp, Google Sheets, dan Discord.
             </p>
           </div>
 
-          <div className="p-6 rounded-xl bg-[#11131c] border border-[#1f2438]">
-            <div className="text-purple-400 font-mono text-sm mb-3">03 / Autonomous 24/7</div>
-            <h4 className="text-base font-bold text-white mb-2">Otonom di Latar Belakang</h4>
-            <p className="text-xs text-[#9ca3af] leading-relaxed">
-              Sistem kami proaktif bergerak sendiri: memantau data, memicu notifikasi saat ada anomali, dan menangani prospek pelanggan tanpa menunggu perintah harian.
+          <div className="p-6 rounded-2xl bg-[#0c0f18] border border-white/[0.06]">
+            <span className="text-purple-400 font-mono text-xs uppercase tracking-wider block mb-3 font-semibold">
+              Proaktif 24/7
+            </span>
+            <h4 className="text-lg font-bold text-white mb-2">Otonom di Background</h4>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Sistem kami proaktif bergerak sendiri di latar belakang: memantau data, memicu notifikasi anomali, dan menangani prospek pelanggan tanpa diperintah harian.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Founder Profile */}
-      <section id="arsitek" className="py-20 px-6 max-w-4xl mx-auto border-t border-[#1f2438]">
-        <div className="p-8 rounded-2xl bg-[#11131c] border border-[#1f2438] flex flex-col md:flex-row items-center gap-8">
-          <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-500 flex items-center justify-center text-black font-black text-3xl shadow-xl shadow-emerald-500/10 shrink-0">
+      {/* Founder Profile Section */}
+      <section id="arsitek" className="py-20 px-6 max-w-4xl mx-auto border-t border-white/[0.06]">
+        <div className="p-8 sm:p-10 rounded-2xl bg-gradient-to-br from-[#0c0f18] to-[#07090e] border border-white/[0.08] flex flex-col md:flex-row items-center gap-8">
+          <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-500 flex items-center justify-center text-black font-black text-3xl shadow-xl shadow-emerald-500/15 shrink-0">
             RP
           </div>
 
           <div className="flex-1 text-center md:text-left">
-            <span className="text-[11px] font-mono text-emerald-400 uppercase tracking-widest block mb-1">
+            <span className="text-[11px] font-mono text-emerald-400 uppercase tracking-widest block mb-1 font-semibold">
               Founder &amp; AI Systems Architect
             </span>
-            <h3 className="text-2xl font-bold text-white mb-3">Raka Putra Pratidina</h3>
-            <p className="text-sm text-[#9ca3af] leading-relaxed mb-5">
-              Fokus pada rekayasa sistem AI otonom, infrastruktur backend mandiri, web intelligence, dan automasi proses bisnis nyata. Membangun Akar Poros sebagai studio teknologi yang mentransformasi kapabilitas AI menjadi pengungkit omset dan efisiensi operasional.
+            <h3 className="text-2xl font-bold text-white mb-2">Raka Putra Pratidina</h3>
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-5">
+              Fokus pada rekayasa sistem AI otonom, infrastruktur backend mandiri, web intelligence, dan automasi proses bisnis nyata. Membangun Akar Poros sebagai studio teknologi yang mentransformasi kapabilitas AI menjadi pengungkit omset dan efisiensi operasional bisnis.
             </p>
 
-            <div className="flex items-center justify-center md:justify-start gap-4 text-xs">
+            <div className="flex items-center justify-center md:justify-start gap-4 text-xs font-medium">
               <a
                 href="https://rakaputra.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-white hover:text-emerald-400 font-semibold transition-colors"
+                className="inline-flex items-center gap-1.5 text-white hover:text-emerald-400 transition-colors"
               >
                 <span>rakaputra.dev</span>
-                <ExternalLink className="w-3.5 h-3.5" />
+                <TbArrowUpRight className="w-3.5 h-3.5" />
               </a>
-              <span className="text-[#334155]">•</span>
+              <span className="text-slate-700">•</span>
               <a
                 href="https://github.com/Akarptra"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-white hover:text-emerald-400 font-semibold transition-colors"
+                className="inline-flex items-center gap-1.5 text-white hover:text-emerald-400 transition-colors"
               >
                 <span>GitHub Profile</span>
-                <ExternalLink className="w-3.5 h-3.5" />
+                <TbArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Final Call to Action */}
+      {/* Conversion Banner */}
       <section className="py-24 px-6 max-w-4xl mx-auto text-center relative z-10">
-        <div className="p-10 sm:p-14 rounded-3xl bg-gradient-to-b from-[#141824] to-[#0c0e17] border border-[#1f2438] shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-[80px] pointer-events-none" />
+        <div className="p-10 sm:p-14 rounded-3xl bg-gradient-to-b from-[#0f131f] to-[#07090e] border border-emerald-500/30 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 blur-[90px] pointer-events-none" />
 
-          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 block mb-3">
+          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 block mb-3 font-semibold">
             Validasi Cepat Tanpa Beban
           </span>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-5">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
             Buktikan di Bisnis Anda Selama 3 Hari.
           </h2>
 
-          <p className="text-sm sm:text-base text-[#9ca3af] max-w-xl mx-auto leading-relaxed mb-8">
-            Kami pasang prototipe asisten WA atau sistem notifikasi di operasional Anda. Jika tidak memberikan dampak nyata, hapus tanpa biaya komitmen.
+          <p className="text-sm sm:text-base text-slate-400 max-w-xl mx-auto leading-relaxed mb-8">
+            Kami pasang prototipe asisten WhatsApp atau sistem notifikasi di operasional Anda. Jika tidak memberikan dampak nyata, hapus tanpa biaya komitmen.
           </p>
 
           <a
@@ -465,15 +594,15 @@ export default function Home() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm transition-all shadow-xl shadow-emerald-500/25"
           >
-            <MessageSquare className="w-4 h-4 fill-black" />
+            <TbBrandWhatsapp className="w-5 h-5 text-black" />
             <span>Mulai Uji Coba Pilot (WhatsApp)</span>
-            <ArrowRight className="w-4 h-4" />
+            <FiArrowRight className="w-4 h-4" />
           </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-10 px-6 border-t border-[#1f2438] text-center text-xs text-[#64748b]">
+      <footer className="py-10 px-6 border-t border-white/[0.06] text-xs text-slate-500">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span className="font-bold text-white tracking-tight">Akar Poros</span>
@@ -481,14 +610,24 @@ export default function Home() {
             <span>© {new Date().getFullYear()} PT Akar Poros Teknologi. All rights reserved.</span>
           </div>
 
-          <div className="flex items-center gap-5 text-[#9ca3af]">
+          <div className="flex items-center gap-6 text-slate-400">
             <a href="https://akarporos.tech" className="hover:text-white transition-colors">
               akarporos.tech
             </a>
-            <a href="https://rakaputra.dev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            <a
+              href="https://rakaputra.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
               rakaputra.dev
             </a>
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-emerald-400 transition-colors"
+            >
               Kontak WhatsApp
             </a>
           </div>
