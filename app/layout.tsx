@@ -14,16 +14,16 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Akar Poros — Autonomous AI Systems & Engineering Studio",
+  title: "Akar Poros — Membangun Sistem AI dari Akarnya",
   description:
-    "Kami membangun ekosistem sistem otonom dan AI dari fondasi terdalam untuk menggerakkan pertumbuhan bisnis Anda 24/7.",
+    "Akar Poros merekayasa ekosistem sistem otonom dan arsitektur AI dari akarnya untuk menggerakkan operasional dan efisiensi bisnis 24/7.",
   keywords: [
     "Akar Poros",
-    "AI Agent Indonesia",
+    "Membangun sistem AI dari akarnya",
+    "AI Engineering Studio",
     "Autonomous AI",
     "WhatsApp AI Assistant",
     "AlertFlow",
-    "AI Studio",
     "Raka Putra Pratidina",
   ],
   authors: [{ name: "Raka Putra Pratidina", url: "https://rakaputra.dev" }],
@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="id" className="dark scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans bg-[#090a0f] text-[#f3f4f6] antialiased selection:bg-emerald-500/20 selection:text-emerald-300`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans bg-[#07261E] text-[#F4F1E6] antialiased selection:bg-[#C7925B]/25 selection:text-[#F4F1E6]`}
       >
         {children}
       </body>

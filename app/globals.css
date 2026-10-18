@@ -3,31 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: #090a0f;
-  --foreground: #f3f4f6;
-  --card: #11131c;
-  --border: #1f2438;
+  --background: #07261E;
+  --foreground: #F4F1E6;
+  --primary: #0B3D2E;
+  --secondary: #4F6F5E;
+  --accent: #C7925B;
 }
 
 body {
-  color: var(--foreground);
-  background-color: var(--background);
+  color: #F4F1E6;
+  background-color: #07261E;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   scroll-behavior: smooth;
 }
 
-/* Subtle grid background */
+/* Subtle organic grid pattern on deep green background */
 .bg-grid-pattern {
-  background-size: 32px 32px;
+  background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(79, 111, 94, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(79, 111, 94, 0.08) 1px, transparent 1px);
 }
 
-.glow-emerald {
-  box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.15);
+.glow-forest {
+  box-shadow: 0 0 60px -10px rgba(11, 61, 46, 0.4);
 }
 
-.glow-cyan {
-  box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.15);
+.glow-copper {
+  box-shadow: 0 0 50px -10px rgba(199, 146, 91, 0.25);
 }
