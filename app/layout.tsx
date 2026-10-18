@@ -28,7 +28,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Raka Putra Pratidina", url: "https://rakaputra.dev" }],
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
   },
 };
 
