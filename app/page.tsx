@@ -21,6 +21,16 @@ interface ModalConfig {
   selectValue?: string;
   formHeading?: string;
   prefillGoal?: string;
+  image?: string;
+  secondaryImage?: string;
+  externalLink?: {
+    url: string;
+    label: string;
+  };
+  secondaryLink?: {
+    url: string;
+    label: string;
+  };
 }
 
 export default function Home() {
@@ -117,6 +127,16 @@ export default function Home() {
       metrics: ["Aktif di 8+ Server Komunitas", "Deduplikasi Monotonik Anti-Spam", "Kontrol Admin Slash Command"],
       selectValue: "AlertFlow Realtime Engine",
       formHeading: "Pasang Radar Notifikasi Cerdas",
+      image: "/alertflow/dashboard.jpg",
+      secondaryImage: "/alertflow/banner.jpg",
+      externalLink: {
+        url: "https://alertflow.akarporos.tech",
+        label: "Kunjungi Website AlertFlow ↗",
+      },
+      secondaryLink: {
+        url: "https://discord.com/oauth2/authorize?client_id=1524069345502826696&permissions=275415026688&integration_type=0&scope=bot+applications.commands",
+        label: "Undang Bot Discord ↗",
+      },
     },
     scraper: {
       badge: "Custom Data Scraper & Pipeline",
@@ -145,6 +165,16 @@ export default function Home() {
       metrics: ["8 Komunitas Aktif", "< 10 Detik Deteksi Live", "99.98% Pengiriman Sukses"],
       selectValue: "AlertFlow Realtime Engine",
       formHeading: "Pasang AlertFlow di Komunitas Anda",
+      image: "/alertflow/dashboard.jpg",
+      secondaryImage: "/alertflow/banner.jpg",
+      externalLink: {
+        url: "https://alertflow.akarporos.tech",
+        label: "Kunjungi Website AlertFlow ↗",
+      },
+      secondaryLink: {
+        url: "https://discord.com/oauth2/authorize?client_id=1524069345502826696&permissions=275415026688&integration_type=0&scope=bot+applications.commands",
+        label: "Undang Bot Discord ↗",
+      },
     },
     enterprise: {
       badge: "Studi Kasus: Klinik Spesialis & Bisnis Berbasis Data",
@@ -157,7 +187,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F9F6] text-[#0B3D2E] antialiased selection:bg-[#A3D9B5] selection:text-[#0B3D2E]">
+    <div className="min-h-screen bg-[#06140E] text-[#F4F1E6] antialiased selection:bg-[#A3D9B5] selection:text-[#06140E]">
       {/* Toast Notification Container */}
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none">
@@ -174,14 +204,14 @@ export default function Home() {
         <header className="flex items-center justify-between py-4 mb-8 md:mb-12">
           {/* Brand Logo */}
           <a href="#hero" className="flex items-center gap-3 group focus:outline-none">
-            <AkarPorosLogo size="sm" theme="light" showTagline={false} />
-            <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-[#EAF1EB] text-[#0B3D2E] border border-[#0B3D2E] font-bold tracking-wider uppercase">
+            <AkarPorosLogo size="sm" theme="dark" showTagline={false} />
+            <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-[#0D261C] text-[#A3D9B5] border border-[#1E4839] font-bold tracking-wider uppercase">
               STUDIO
             </span>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-[#0B3D2E]">
+          <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-[#F4F1E6]">
             <button
               onClick={() => scrollToSection("about")}
               className="hover:underline decoration-[#A3D9B5] decoration-2 underline-offset-4 transition-all cursor-pointer"
@@ -229,7 +259,7 @@ export default function Home() {
                   formHeading: "Request Jadwal Konsultasi",
                 })
               }
-              className="font-mono-btn text-sm border border-[#0B3D2E] rounded-xl px-6 py-3 hover:bg-[#A3D9B5] hover:shadow-brutal-sm transition-all duration-200 active:translate-y-0.5 cursor-pointer font-bold"
+              className="font-mono-btn text-sm border border-[#A3D9B5]/40 text-[#A3D9B5] rounded-xl px-6 py-3 hover:bg-[#A3D9B5] hover:text-[#06140E] hover:shadow-brutal-sm transition-all duration-200 active:translate-y-0.5 cursor-pointer font-bold"
             >
               Konsultasi Gratis
             </button>
@@ -517,7 +547,7 @@ export default function Home() {
           {/* 2x2 Services Grid (Neo-Brutalist Checkerboard) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-8">
             {/* Card 1: WhatsApp Ops (Light Card) */}
-            <article className="bg-[#EAF1EB] border border-[#0B3D2E] rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
+            <article className="bg-[#0E2920] border border-[#1E4839] rounded-[32px] p-7 sm:p-9 shadow-brutal text-[#F4F1E6] hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
               <div className="flex justify-between items-start gap-4">
                 <h3 className="flex flex-col items-start text-xl sm:text-2xl font-bold leading-snug">
                   <span className="bg-[#A3D9B5] text-[#0B3D2E] px-2.5 py-0.5 rounded-md border border-[#0B3D2E]/20">Autonomous WhatsApp</span>
@@ -555,7 +585,7 @@ export default function Home() {
             </article>
 
             {/* Card 2: Private AI Infra (Dark Card in Forest Green) */}
-            <article className="bg-[#0B3D2E] text-[#F4F1E6] border border-[#0B3D2E] rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
+            <article className="bg-[#0D261C] text-[#F4F1E6] border border-[#1E4839] rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
               <div className="flex justify-between items-start gap-4">
                 <h3 className="flex flex-col items-start text-xl sm:text-2xl font-bold leading-snug text-dark">
                   <span className="bg-[#F4F1E6] text-[#0B3D2E] px-2.5 py-0.5 rounded-md">Private AI Infra</span>
@@ -593,46 +623,56 @@ export default function Home() {
               </div>
             </article>
 
-            {/* Card 3: AlertFlow Engine (Dark Card in Forest Green) */}
-            <article className="bg-[#0B3D2E] text-[#F4F1E6] border border-[#0B3D2E] rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
-              <div className="flex justify-between items-start gap-4">
-                <h3 className="flex flex-col items-start text-xl sm:text-2xl font-bold leading-snug text-dark">
-                  <span className="bg-[#F4F1E6] text-[#0B3D2E] px-2.5 py-0.5 rounded-md">AlertFlow Engine</span>
-                  <span className="bg-[#F4F1E6] text-[#0B3D2E] px-2.5 py-0.5 rounded-md mt-1">Radar Multi-Platform</span>
-                </h3>
+            {/* Card 3: AlertFlow Engine (Dedicated Visual Card with Logo & Preview) */}
+            <article className="bg-[#0B1E2B] text-[#F4F1E6] border border-[#0284C7]/40 rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[300px] group relative overflow-hidden">
+              <div className="flex flex-col sm:flex-row justify-between items-start gap-4 relative z-10">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2.5">
+                    <img src="/alertflow/logo.jpg" alt="AlertFlow Logo" className="w-8 h-8 rounded-xl object-cover border border-cyan-400/50 shadow-sm" />
+                    <span className="bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 text-xs font-bold px-2.5 py-0.5 rounded-md font-mono">
+                      AlertFlow Engine
+                    </span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold leading-tight text-white">
+                    Radar Sinyal Konten &amp; <br />
+                    <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">Live Discord Bot</span>
+                  </h3>
+                  <p className="text-xs text-slate-300 max-w-[280px] leading-relaxed">
+                    Memonitor TikTok &amp; YouTube secara real-time. Broadcast embed interaktif ke Discord tanpa delay.
+                  </p>
+                </div>
 
-                {/* Custom Vector Illustration */}
-                <div className="w-36 sm:w-44 flex-shrink-0 pt-2">
-                  <svg viewBox="0 0 180 130" className="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="90" cy="65" r="45" stroke="#F4F1E6" strokeWidth="1.5" strokeDasharray="4 4" />
-                    <circle cx="90" cy="65" r="30" stroke="#A3D9B5" strokeWidth="2" />
-                    <circle cx="90" cy="65" r="14" fill="#A3D9B5" />
-                    <line x1="90" y1="20" x2="90" y2="110" stroke="#F4F1E6" strokeWidth="1" />
-                    <line x1="45" y1="65" x2="135" y2="65" stroke="#F4F1E6" strokeWidth="1" />
-                    <circle cx="115" cy="50" r="5" fill="#F4F1E6" />
-                  </svg>
+                {/* Live Preview Image Snapshot */}
+                <div className="w-36 sm:w-44 rounded-2xl overflow-hidden border border-cyan-500/40 shadow-lg flex-shrink-0 group-hover:scale-105 transition-transform bg-[#0B0F19]">
+                  <img src="/alertflow/dashboard.jpg" alt="AlertFlow Preview" className="w-full h-auto object-cover" />
                 </div>
               </div>
 
-              <div className="mt-6 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3 relative z-10">
                 <button
                   type="button"
                   onClick={() => openModal(servicesData.alertflow)}
-                  className="inline-flex items-center gap-3.5 text-[#F4F1E6] font-medium text-[15px] focus:outline-none cursor-pointer"
+                  className="inline-flex items-center gap-2.5 text-cyan-300 hover:text-white font-bold text-sm focus:outline-none cursor-pointer"
                 >
-                  <span className="w-9 h-9 rounded-full bg-[#F4F1E6] text-[#0B3D2E] flex items-center justify-center group-hover:rotate-45 transition-transform duration-200">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.4" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H8M17 7V16" />
-                    </svg>
+                  <span className="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 flex items-center justify-center group-hover:rotate-45 transition-transform duration-200">
+                    ↗
                   </span>
-                  <span className="group-hover:underline underline-offset-4 font-bold">Pelajari Solusi</span>
+                  <span className="underline underline-offset-4">Lihat Contoh &amp; Detail</span>
                 </button>
-                <span className="text-xs font-mono text-[#A3D9B5] font-semibold">&lt; 10s Event Loop</span>
+                <a
+                  href="https://alertflow.akarporos.tech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-cyan-300 hover:text-white bg-[#06140E] px-3.5 py-1.5 rounded-full border border-cyan-500/40 hover:border-cyan-300 flex items-center gap-2 shadow-sm transition-all"
+                >
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                  <span>alertflow.akarporos.tech ↗</span>
+                </a>
               </div>
             </article>
 
             {/* Card 4: Data Scraper & Pipeline (Light Card) */}
-            <article className="bg-[#EAF1EB] border border-[#0B3D2E] rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
+            <article className="bg-[#0E2920] border border-[#1E4839] rounded-[32px] p-7 sm:p-9 shadow-brutal text-[#F4F1E6] hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
               <div className="flex justify-between items-start gap-4">
                 <h3 className="flex flex-col items-start text-xl sm:text-2xl font-bold leading-snug">
                   <span className="bg-[#A3D9B5] text-[#0B3D2E] px-2.5 py-0.5 rounded-md border border-[#0B3D2E]/20">Custom Data Scraper</span>
@@ -740,7 +780,7 @@ export default function Home() {
           </div>
 
           {/* Dark 3-Column Container in Forest Green */}
-          <div className="bg-[#0B3D2E] text-[#F4F1E6] rounded-[32px] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-0 lg:divide-x lg:divide-[#4F6F5E]/40 border border-[#0B3D2E] shadow-brutal">
+          <div className="bg-[#091E16] text-[#F4F1E6] rounded-[32px] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-0 lg:divide-x lg:divide-[#1E4839] border border-[#1E4839] shadow-brutal">
             {/* Case 1 */}
             <div className="lg:pr-10 flex flex-col justify-between gap-6">
               <p className="text-[#F4F1E6]/90 text-sm sm:text-[15px] leading-relaxed">
@@ -1153,49 +1193,95 @@ export default function Home() {
         </footer>
       </div>
 
-      {/* ================= INTERACTIVE MODAL (Proposal / Consultation) ================= */}
+      {/* ================= INTERACTIVE MODAL (Proposal / Consultation / Showcase) ================= */}
       {modalOpen && modalConfig && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#07261E]/70 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
           onClick={closeModal}
         >
           <div
-            className="bg-white border-2 border-[#0B3D2E] rounded-[32px] shadow-brutal max-w-lg w-full p-7 sm:p-9 relative max-h-[90vh] overflow-y-auto"
+            className="bg-[#0D261C] border-2 border-[#1E4839] rounded-[32px] shadow-brutal text-[#F4F1E6] max-w-lg w-full p-7 sm:p-9 relative max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               aria-label="Tutup modal"
               onClick={closeModal}
-              className="absolute top-6 right-6 w-9 h-9 rounded-full bg-[#EAF1EB] border border-[#0B3D2E] flex items-center justify-center hover:bg-[#A3D9B5] transition-colors cursor-pointer font-bold"
+              className="absolute top-6 right-6 w-9 h-9 rounded-full bg-[#13382C] border border-[#1E4839] text-[#A3D9B5] flex items-center justify-center hover:bg-[#A3D9B5] hover:text-[#06140E] transition-colors cursor-pointer font-bold"
             >
               ✕
             </button>
 
             {/* Dynamic Modal Content Container */}
             <div>
-              <span className="inline-block bg-[#A3D9B5] text-[#0B3D2E] text-xs font-bold px-2.5 py-1 rounded-md mb-3 border border-[#0B3D2E]/20">
+              <span className="inline-block bg-[#A3D9B5] text-[#06140E] text-xs font-bold px-2.5 py-1 rounded-md mb-3 border border-[#A3D9B5]/40 font-mono">
                 {modalConfig.badge}
               </span>
-              <h3 className="text-2xl font-bold text-[#0B3D2E] leading-snug mb-2">{modalConfig.title}</h3>
-              <p className="text-[#4F6F5E] text-sm leading-relaxed">{modalConfig.desc}</p>
+              <h3 className="text-2xl font-bold text-white leading-snug mb-2">{modalConfig.title}</h3>
+              <p className="text-[#A8C7B5] text-sm leading-relaxed">{modalConfig.desc}</p>
 
               {modalConfig.metrics && modalConfig.metrics.length > 0 && (
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mt-4">
                   {modalConfig.metrics.map((m, idx) => (
                     <div
                       key={idx}
-                      className="bg-[#EAF1EB] border border-[#0B3D2E] rounded-xl px-3 py-2 text-xs font-bold text-[#0B3D2E] text-center"
+                      className="bg-[#06140E] border border-[#1E4839] rounded-xl px-3 py-2 text-xs font-bold text-[#A3D9B5] text-center"
                     >
                       {m}
                     </div>
                   ))}
                 </div>
               )}
+
+              {/* Showcase Images (Banner, Dashboard, Discord Preview) */}
+              {modalConfig.image && (
+                <div className="mt-5 space-y-3">
+                  <div className="rounded-2xl overflow-hidden border border-[#1E4839] bg-[#06140E] shadow-md">
+                    <img
+                      src={modalConfig.image}
+                      alt={modalConfig.title}
+                      className="w-full h-auto max-h-56 object-cover"
+                    />
+                  </div>
+                  {modalConfig.secondaryImage && (
+                    <div className="rounded-2xl overflow-hidden border border-[#1E4839] bg-[#06140E] shadow-md">
+                      <img
+                        src={modalConfig.secondaryImage}
+                        alt="Preview Banner"
+                        className="w-full h-auto max-h-48 object-cover"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* External CTA Links (e.g. AlertFlow Web & Bot Invite) */}
+              {modalConfig.externalLink && (
+                <div className="mt-5 flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={modalConfig.externalLink.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center font-mono-btn bg-[#A3D9B5] text-[#06140E] font-bold text-xs sm:text-sm py-3.5 px-4 rounded-xl border border-[#A3D9B5] shadow-brutal hover:bg-white transition-all flex items-center justify-center gap-2"
+                  >
+                    <span>{modalConfig.externalLink.label}</span>
+                  </a>
+                  {modalConfig.secondaryLink && (
+                    <a
+                      href={modalConfig.secondaryLink.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center font-mono-btn bg-[#06140E] text-cyan-300 font-bold text-xs sm:text-sm py-3.5 px-4 rounded-xl border border-cyan-500/40 hover:border-cyan-300 transition-all flex items-center justify-center gap-2"
+                    >
+                      <span>{modalConfig.secondaryLink.label}</span>
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Shared Lead Form inside Modal */}
-            <form onSubmit={handleModalSubmit} className="mt-6 pt-6 border-t border-[#0B3D2E]/15 space-y-4">
+            <form onSubmit={handleModalSubmit} className="mt-6 pt-6 border-t border-[#1E4839] space-y-4">
               <h4 className="text-base font-bold text-[#0B3D2E]">
                 {modalConfig.formHeading || "Formulir Konsultasi & Proposal"}
               </h4>
@@ -1209,7 +1295,7 @@ export default function Home() {
                   value={formName}
                   onChange={(e) => setFormName(e.target.value)}
                   placeholder="Budi Santoso"
-                  className="w-full border border-[#0B3D2E] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#A3D9B5]"
+                  className="w-full bg-[#06140E] border border-[#1E4839] text-[#F4F1E6] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#A3D9B5]"
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1223,7 +1309,7 @@ export default function Home() {
                     value={formEmail}
                     onChange={(e) => setFormEmail(e.target.value)}
                     placeholder="budi@perusahaan.com"
-                    className="w-full border border-[#0B3D2E] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#A3D9B5]"
+                    className="w-full bg-[#06140E] border border-[#1E4839] text-[#F4F1E6] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#A3D9B5]"
                   />
                 </div>
                 <div>
@@ -1233,7 +1319,7 @@ export default function Home() {
                   <select
                     value={formService}
                     onChange={(e) => setFormService(e.target.value)}
-                    className="w-full border border-[#0B3D2E] rounded-xl px-3 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#A3D9B5]"
+                    className="w-full bg-[#06140E] border border-[#1E4839] text-[#F4F1E6] rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#A3D9B5]"
                   >
                     <option value="Autonomous WhatsApp Operations">Autonomous WhatsApp Operations</option>
                     <option value="Private Self-Hosted AI Infrastructure">Private AI Infrastructure</option>
@@ -1252,7 +1338,7 @@ export default function Home() {
                   value={formGoals}
                   onChange={(e) => setFormGoals(e.target.value)}
                   placeholder="Ceritakan proses bisnis yang ingin diotomasi..."
-                  className="w-full border border-[#0B3D2E] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#A3D9B5]"
+                  className="w-full bg-[#06140E] border border-[#1E4839] text-[#F4F1E6] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#A3D9B5]"
                 />
               </div>
               <button
