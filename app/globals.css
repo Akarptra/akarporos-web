@@ -1,34 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #07261E;
-  --foreground: #F4F1E6;
-  --primary: #0B3D2E;
-  --secondary: #4F6F5E;
-  --accent: #C7925B;
+  --background: #FFFFFF;
+  --foreground: #07261E;
+  --primary: #07261E;
+  --accent: #B9FF66;
+  --copper: #C7925B;
+  --forest: #0B3D2E;
+  --light: #F4F6F4;
 }
 
 body {
-  color: #F4F1E6;
-  background-color: #07261E;
+  color: #07261E;
+  background-color: #FFFFFF;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   scroll-behavior: smooth;
 }
 
-/* Subtle organic grid pattern on deep green background */
-.bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(79, 111, 94, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(79, 111, 94, 0.08) 1px, transparent 1px);
+.font-mono-btn {
+  font-family: 'Space Mono', monospace;
+  letter-spacing: -0.02em;
 }
 
-.glow-forest {
-  box-shadow: 0 0 60px -10px rgba(11, 61, 46, 0.4);
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
 }
 
-.glow-copper {
-  box-shadow: 0 0 50px -10px rgba(199, 146, 91, 0.25);
+@keyframes pulseStar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSlow 4.5s ease-in-out 1.2s infinite;
+}
+
+.animate-star {
+  animation: pulseStar 3.5s ease-in-out infinite;
 }
