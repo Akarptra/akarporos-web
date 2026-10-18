@@ -5,18 +5,19 @@
 @tailwind utilities;
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #07261E;
-  --primary: #07261E;
-  --accent: #B9FF66;
+  --background: #F7F9F6;
+  --foreground: #0B3D2E;
+  --primary: #0B3D2E;
+  --accent: #A3D9B5;
   --copper: #C7925B;
-  --forest: #0B3D2E;
-  --light: #F4F6F4;
+  --sage: #4F6F5E;
+  --light: #EAF1EB;
+  --ivory: #F4F1E6;
 }
 
 body {
-  color: #07261E;
-  background-color: #FFFFFF;
+  color: #0B3D2E;
+  background-color: #F7F9F6;
   font-family: 'Space Grotesk', 'Inter', sans-serif;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   scroll-behavior: smooth;

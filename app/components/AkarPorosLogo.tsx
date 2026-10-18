@@ -52,13 +52,13 @@ export function AkarPorosLogo({
 
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
-      <div className="relative shrink-0 flex items-center justify-center p-1.5 rounded-xl bg-[#07261E] border border-[#07261E] shadow-brutal-sm group-hover:rotate-6 transition-transform duration-200">
+      <div className="relative shrink-0 flex items-center justify-center p-1.5 rounded-xl bg-[#0B3D2E] border border-[#0B3D2E] shadow-brutal-sm group-hover:rotate-6 transition-transform duration-200">
         <AkarPorosEmblem className={s.emblem} />
       </div>
       <div className="flex flex-col">
         <span
           className={`font-bold tracking-tight uppercase font-sans ${
-            isLight ? "text-[#07261E]" : "text-[#F4F1E6]"
+            isLight ? "text-[#0B3D2E]" : "text-[#F4F1E6]"
           } ${s.title}`}
         >
           Akar Poros

@@ -157,12 +157,12 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-dark antialiased selection:bg-lime selection:text-dark">
+    <div className="min-h-screen bg-[#F7F9F6] text-[#0B3D2E] antialiased selection:bg-[#A3D9B5] selection:text-[#0B3D2E]">
       {/* Toast Notification Container */}
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none">
-          <div className="pointer-events-auto bg-dark text-white border-2 border-lime px-5 py-3.5 rounded-2xl shadow-brutal flex items-center gap-3 text-sm font-medium transition-all duration-300">
-            <span className="w-2.5 h-2.5 rounded-full bg-lime flex-shrink-0 animate-ping" />
+          <div className="pointer-events-auto bg-[#0B3D2E] text-[#F4F1E6] border-2 border-[#A3D9B5] px-5 py-3.5 rounded-2xl shadow-brutal flex items-center gap-3 text-sm font-medium transition-all duration-300">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#A3D9B5] flex-shrink-0 animate-ping" />
             <span>{toastMessage}</span>
           </div>
         </div>
@@ -175,28 +175,28 @@ export default function Home() {
           {/* Brand Logo */}
           <a href="#hero" className="flex items-center gap-3 group focus:outline-none">
             <AkarPorosLogo size="sm" theme="light" showTagline={false} />
-            <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-light text-dark border border-dark font-bold tracking-wider uppercase">
+            <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-[#EAF1EB] text-[#0B3D2E] border border-[#0B3D2E] font-bold tracking-wider uppercase">
               STUDIO
             </span>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-dark">
+          <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-[#0B3D2E]">
             <button
               onClick={() => scrollToSection("about")}
-              className="hover:underline decoration-lime decoration-2 underline-offset-4 transition-all cursor-pointer"
+              className="hover:underline decoration-[#A3D9B5] decoration-2 underline-offset-4 transition-all cursor-pointer"
             >
               Tentang Kami
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="hover:underline decoration-lime decoration-2 underline-offset-4 transition-all cursor-pointer"
+              className="hover:underline decoration-[#A3D9B5] decoration-2 underline-offset-4 transition-all cursor-pointer"
             >
               Solusi &amp; Agen
             </button>
             <button
               onClick={() => scrollToSection("case-studies")}
-              className="hover:underline decoration-lime decoration-2 underline-offset-4 transition-all cursor-pointer"
+              className="hover:underline decoration-[#A3D9B5] decoration-2 underline-offset-4 transition-all cursor-pointer"
             >
               Studi Kasus
             </button>
@@ -205,7 +205,7 @@ export default function Home() {
                 setActiveTab("pricing");
                 scrollToSection("pricing-section");
               }}
-              className="hover:underline decoration-lime decoration-2 underline-offset-4 transition-all cursor-pointer"
+              className="hover:underline decoration-[#A3D9B5] decoration-2 underline-offset-4 transition-all cursor-pointer"
             >
               Paket Biaya
             </button>
@@ -214,7 +214,7 @@ export default function Home() {
                 setActiveTab("blog");
                 scrollToSection("pricing-section");
               }}
-              className="hover:underline decoration-lime decoration-2 underline-offset-4 transition-all cursor-pointer"
+              className="hover:underline decoration-[#A3D9B5] decoration-2 underline-offset-4 transition-all cursor-pointer"
             >
               Wawasan AI
             </button>
@@ -229,7 +229,7 @@ export default function Home() {
                   formHeading: "Request Jadwal Konsultasi",
                 })
               }
-              className="font-mono-btn text-sm border border-dark rounded-xl px-6 py-3 hover:bg-lime hover:shadow-brutal-sm transition-all duration-200 active:translate-y-0.5 cursor-pointer font-bold"
+              className="font-mono-btn text-sm border border-[#0B3D2E] rounded-xl px-6 py-3 hover:bg-[#A3D9B5] hover:shadow-brutal-sm transition-all duration-200 active:translate-y-0.5 cursor-pointer font-bold"
             >
               Konsultasi Gratis
             </button>
@@ -240,7 +240,7 @@ export default function Home() {
             type="button"
             aria-label="Toggle Navigation"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2.5 rounded-xl border border-dark hover:bg-lime transition-colors"
+            className="lg:hidden p-2.5 rounded-xl border border-[#0B3D2E] hover:bg-[#A3D9B5] transition-colors"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               {mobileMenuOpen ? (
@@ -254,23 +254,23 @@ export default function Home() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mb-8 p-6 rounded-3xl bg-light border border-dark shadow-brutal">
+          <div className="lg:hidden mb-8 p-6 rounded-3xl bg-[#EAF1EB] border border-[#0B3D2E] shadow-brutal">
             <div className="flex flex-col gap-4 text-base font-medium">
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-left py-1.5 hover:text-zinc-600 font-semibold"
+                className="text-left py-1.5 hover:text-[#4F6F5E] font-semibold"
               >
                 Tentang Kami
               </button>
               <button
                 onClick={() => scrollToSection("services")}
-                className="text-left py-1.5 hover:text-zinc-600 font-semibold"
+                className="text-left py-1.5 hover:text-[#4F6F5E] font-semibold"
               >
                 Solusi &amp; Agen
               </button>
               <button
                 onClick={() => scrollToSection("case-studies")}
-                className="text-left py-1.5 hover:text-zinc-600 font-semibold"
+                className="text-left py-1.5 hover:text-[#4F6F5E] font-semibold"
               >
                 Studi Kasus
               </button>
@@ -279,7 +279,7 @@ export default function Home() {
                   setActiveTab("pricing");
                   scrollToSection("pricing-section");
                 }}
-                className="text-left py-1.5 hover:text-zinc-600 font-semibold"
+                className="text-left py-1.5 hover:text-[#4F6F5E] font-semibold"
               >
                 Paket Biaya
               </button>
@@ -288,7 +288,7 @@ export default function Home() {
                   setActiveTab("blog");
                   scrollToSection("pricing-section");
                 }}
-                className="text-left py-1.5 hover:text-zinc-600 font-semibold"
+                className="text-left py-1.5 hover:text-[#4F6F5E] font-semibold"
               >
                 Wawasan AI
               </button>
@@ -304,7 +304,7 @@ export default function Home() {
                     formHeading: "Request Konsultasi",
                   });
                 }}
-                className="font-mono-btn text-sm border border-dark bg-white rounded-xl px-5 py-3 text-center hover:bg-lime transition-colors font-bold"
+                className="font-mono-btn text-sm border border-[#0B3D2E] bg-white rounded-xl px-5 py-3 text-center hover:bg-[#A3D9B5] transition-colors font-bold"
               >
                 Konsultasi Gratis
               </button>
@@ -316,17 +316,17 @@ export default function Home() {
         <section id="hero" className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center mb-16 md:mb-24">
           {/* Left Column */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-block bg-lime text-dark text-xs font-mono font-bold px-3 py-1 rounded-lg border border-dark/20 uppercase tracking-wider">
+            <div className="inline-block bg-[#A3D9B5] text-[#0B3D2E] text-xs font-mono font-bold px-3 py-1 rounded-lg border border-[#0B3D2E]/20 uppercase tracking-wider">
               Membangun sistem AI dari akarnya.
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-bold leading-[1.12] tracking-tight text-dark">
+            <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-bold leading-[1.12] tracking-tight text-[#0B3D2E]">
               Membangun sistem AI<br className="hidden sm:inline" />
               dari akarnya<br className="hidden sm:inline" />
               untuk pertumbuhan
             </h1>
 
-            <p className="text-zinc-600 text-base sm:text-[17px] leading-relaxed max-w-[480px]">
+            <p className="text-[#4F6F5E] text-base sm:text-[17px] leading-relaxed max-w-[480px]">
               Studio rekayasa sistem otonom 24/7 untuk bisnis nyata: asisten WhatsApp tanpa jeda, radar monitor intelijen, dan infrastruktur data privat yang menyatu dengan SOP operasional Anda.
             </p>
 
@@ -335,16 +335,16 @@ export default function Home() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono-btn inline-flex items-center gap-2 bg-dark text-white text-sm sm:text-[15px] px-7 py-4 rounded-xl hover:bg-lime hover:text-dark border border-dark shadow-brutal hover:shadow-brutal-hover transition-all duration-200 active:translate-y-0.5 font-bold"
+                className="font-mono-btn inline-flex items-center gap-2 bg-[#0B3D2E] text-[#F4F1E6] text-sm sm:text-[15px] px-7 py-4 rounded-xl hover:bg-[#A3D9B5] hover:text-[#0B3D2E] border border-[#0B3D2E] shadow-brutal hover:shadow-brutal-hover transition-all duration-200 active:translate-y-0.5 font-bold"
               >
-                <TbBrandWhatsapp className="w-4 h-4 text-lime group-hover:text-dark" />
+                <TbBrandWhatsapp className="w-4 h-4 text-[#A3D9B5] group-hover:text-[#0B3D2E]" />
                 <span>Uji Coba Pilot 3 Hari</span>
               </a>
 
               <button
                 type="button"
                 onClick={() => scrollToSection("services")}
-                className="font-mono-btn text-sm sm:text-[15px] border border-dark rounded-xl px-6 py-4 hover:bg-light transition-all duration-200 active:translate-y-0.5 cursor-pointer font-bold"
+                className="font-mono-btn text-sm sm:text-[15px] border border-[#0B3D2E] rounded-xl px-6 py-4 bg-[#EAF1EB] hover:bg-[#D8E6DB] text-[#0B3D2E] transition-all duration-200 active:translate-y-0.5 cursor-pointer font-bold"
               >
                 Jelajahi Solusi ↗
               </button>
@@ -355,14 +355,14 @@ export default function Home() {
           <div className="lg:col-span-6 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[500px] aspect-[5/4] flex items-center justify-center">
               <svg viewBox="0 0 520 430" className="w-full h-auto overflow-visible" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Orbital Wireframe Rings */}
-                <ellipse cx="255" cy="245" rx="185" ry="62" transform="rotate(26 255 245)" stroke="#07261E" strokeWidth="1.8" />
-                <ellipse cx="248" cy="258" rx="185" ry="62" transform="rotate(26 248 258)" stroke="#07261E" strokeWidth="1.8" />
-                <ellipse cx="240" cy="272" rx="175" ry="56" transform="rotate(26 240 272)" stroke="#07261E" strokeWidth="1.4" strokeDasharray="4 4" />
+                {/* Orbital Wireframe Rings in Forest Green */}
+                <ellipse cx="255" cy="245" rx="185" ry="62" transform="rotate(26 255 245)" stroke="#0B3D2E" strokeWidth="1.8" />
+                <ellipse cx="248" cy="258" rx="185" ry="62" transform="rotate(26 248 258)" stroke="#0B3D2E" strokeWidth="1.8" />
+                <ellipse cx="240" cy="272" rx="175" ry="56" transform="rotate(26 240 272)" stroke="#0B3D2E" strokeWidth="1.4" strokeDasharray="4 4" />
 
                 {/* Decorative Green, Copper & Dark Accents */}
-                <circle cx="96" cy="96" r="16" fill="#07261E" />
-                <circle cx="132" cy="128" r="9" fill="#B9FF66" />
+                <circle cx="96" cy="96" r="16" fill="#0B3D2E" />
+                <circle cx="132" cy="128" r="9" fill="#A3D9B5" />
                 <circle cx="385" cy="348" r="7" fill="#C7925B" />
 
                 {/* Bottom Left 4-Point Star */}
@@ -370,7 +370,7 @@ export default function Home() {
                   className="animate-star"
                   style={{ transformOrigin: "112px 305px" }}
                   d="M112 272C116 293 121 298 142 305C121 312 116 317 112 338C108 317 103 312 82 305C103 298 108 293 112 272Z"
-                  fill="#07261E"
+                  fill="#0B3D2E"
                 />
 
                 {/* Bottom Center Small Star */}
@@ -379,11 +379,11 @@ export default function Home() {
                   fill="#C7925B"
                 />
 
-                {/* Central Autonomous Core & Flywheel Container */}
+                {/* Central Autonomous Core & Flywheel Container in Forest Green */}
                 <g className="animate-float">
                   {/* Outer Core Frame */}
-                  <rect x="180" y="110" width="160" height="160" rx="36" fill="#07261E" stroke="#07261E" strokeWidth="3" />
-                  <rect x="186" y="116" width="148" height="148" rx="30" fill="#0B3D2E" />
+                  <rect x="180" y="110" width="160" height="160" rx="36" fill="#0B3D2E" stroke="#0B3D2E" strokeWidth="3" />
+                  <rect x="186" y="116" width="148" height="148" rx="30" fill="#0E4D3A" />
 
                   {/* Brand Geometric Emblem Inside Core */}
                   <g transform="translate(195, 125) scale(0.33)">
@@ -391,39 +391,39 @@ export default function Home() {
                   </g>
 
                   {/* Radiating Signal Waves */}
-                  <path d="M355 150C375 160 385 180 385 200" stroke="#07261E" strokeWidth="2.5" strokeLinecap="round" />
-                  <path d="M368 135C395 150 410 175 410 205" stroke="#07261E" strokeWidth="2.5" strokeLinecap="round" />
+                  <path d="M355 150C375 160 385 180 385 200" stroke="#0B3D2E" strokeWidth="2.5" strokeLinecap="round" />
+                  <path d="M368 135C395 150 410 175 410 205" stroke="#0B3D2E" strokeWidth="2.5" strokeLinecap="round" />
                 </g>
 
-                {/* Floating Icon 1: WhatsApp Automation Node (Lime Circle) */}
+                {/* Floating Icon 1: WhatsApp Automation Node (Mint Sage Circle) */}
                 <g className="animate-float-delayed">
-                  <circle cx="384" cy="65" r="28" fill="#B9FF66" stroke="#07261E" strokeWidth="2" />
+                  <circle cx="384" cy="65" r="28" fill="#A3D9B5" stroke="#0B3D2E" strokeWidth="2" />
                   <g transform="translate(370, 51)">
-                    <TbBrandWhatsapp className="w-7 h-7 text-dark" />
+                    <TbBrandWhatsapp className="w-7 h-7 text-[#0B3D2E]" />
                   </g>
                 </g>
 
-                {/* Floating Icon 2: Private Security Shield (Dark Circle) */}
+                {/* Floating Icon 2: Private Security Shield (Forest Green Circle) */}
                 <g className="animate-float">
-                  <circle cx="454" cy="130" r="27" fill="#07261E" stroke="#07261E" strokeWidth="2" />
+                  <circle cx="454" cy="130" r="27" fill="#0B3D2E" stroke="#0B3D2E" strokeWidth="2" />
                   <g transform="translate(440, 116)">
-                    <TbShieldLock className="w-7 h-7 text-lime" />
+                    <TbShieldLock className="w-7 h-7 text-[#A3D9B5]" />
                   </g>
                 </g>
 
-                {/* Floating Icon 3: Terminal Pipeline (Lime Circle) */}
+                {/* Floating Icon 3: Terminal Pipeline (Copper Circle) */}
                 <g className="animate-float-delayed">
-                  <circle cx="430" cy="225" r="27" fill="#B9FF66" stroke="#07261E" strokeWidth="2" />
+                  <circle cx="430" cy="225" r="27" fill="#C7925B" stroke="#0B3D2E" strokeWidth="2" />
                   <g transform="translate(416, 211)">
-                    <TbTerminal2 className="w-7 h-7 text-dark" />
+                    <TbTerminal2 className="w-7 h-7 text-[#07261E]" />
                   </g>
                 </g>
 
-                {/* Floating Icon 4: PostgreSQL / Storage Node (White Circle) */}
+                {/* Floating Icon 4: PostgreSQL / Storage Node (Soft Sage Circle) */}
                 <g className="animate-float">
-                  <circle cx="110" cy="180" r="27" fill="#FFFFFF" stroke="#07261E" strokeWidth="2" />
+                  <circle cx="110" cy="180" r="27" fill="#EAF1EB" stroke="#0B3D2E" strokeWidth="2" />
                   <g transform="translate(96, 166)">
-                    <TbDatabase className="w-7 h-7 text-dark" />
+                    <TbDatabase className="w-7 h-7 text-[#0B3D2E]" />
                   </g>
                 </g>
               </svg>
@@ -432,8 +432,8 @@ export default function Home() {
         </section>
 
         {/* ================= PARTNER LOGOS / TECH STACK STRIP ================= */}
-        <section id="about" aria-label="Teknologi Pendukung" className="py-6 mb-16 md:mb-24 border-y border-zinc-200">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-85">
+        <section id="about" aria-label="Teknologi Pendukung" className="py-6 mb-16 md:mb-24 border-y border-[#0B3D2E]/15">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-90">
             {/* WhatsApp Business API */}
             <button
               type="button"
@@ -441,8 +441,8 @@ export default function Home() {
               className="group focus:outline-none transition-opacity hover:opacity-100 flex items-center gap-2 cursor-pointer"
               title="WhatsApp Cloud API"
             >
-              <TbBrandWhatsapp className="w-6 h-6 text-dark group-hover:scale-110 transition-transform" />
-              <span className="font-bold text-dark text-base tracking-tight">WhatsApp</span>
+              <TbBrandWhatsapp className="w-6 h-6 text-[#0B3D2E] group-hover:scale-110 transition-transform" />
+              <span className="font-bold text-[#0B3D2E] text-base tracking-tight">WhatsApp</span>
             </button>
 
             {/* Docker */}
@@ -452,8 +452,8 @@ export default function Home() {
               className="group focus:outline-none transition-opacity hover:opacity-100 flex items-center gap-2 cursor-pointer"
               title="Docker Container Isolation"
             >
-              <TbCpu className="w-6 h-6 text-dark group-hover:scale-110 transition-transform" />
-              <span className="font-bold text-dark text-base tracking-tight">Docker</span>
+              <TbCpu className="w-6 h-6 text-[#0B3D2E] group-hover:scale-110 transition-transform" />
+              <span className="font-bold text-[#0B3D2E] text-base tracking-tight">Docker</span>
             </button>
 
             {/* Next.js 14 */}
@@ -463,8 +463,8 @@ export default function Home() {
               className="group focus:outline-none transition-opacity hover:opacity-100 flex items-center gap-2 cursor-pointer"
               title="Next.js App Engine"
             >
-              <span className="font-mono text-xl font-black text-dark group-hover:scale-110 transition-transform">N</span>
-              <span className="font-bold text-dark text-base tracking-tight">Next.js</span>
+              <span className="font-mono text-xl font-black text-[#0B3D2E] group-hover:scale-110 transition-transform">N</span>
+              <span className="font-bold text-[#0B3D2E] text-base tracking-tight">Next.js</span>
             </button>
 
             {/* PostgreSQL */}
@@ -474,8 +474,8 @@ export default function Home() {
               className="group focus:outline-none transition-opacity hover:opacity-100 flex items-center gap-2 cursor-pointer"
               title="PostgreSQL Database"
             >
-              <TbDatabase className="w-6 h-6 text-dark group-hover:scale-110 transition-transform" />
-              <span className="font-bold text-dark text-base tracking-tight">PostgreSQL</span>
+              <TbDatabase className="w-6 h-6 text-[#0B3D2E] group-hover:scale-110 transition-transform" />
+              <span className="font-bold text-[#0B3D2E] text-base tracking-tight">PostgreSQL</span>
             </button>
 
             {/* Discord Gateway */}
@@ -485,8 +485,8 @@ export default function Home() {
               className="group focus:outline-none transition-opacity hover:opacity-100 flex items-center gap-2 cursor-pointer"
               title="Discord Gateway"
             >
-              <SiDiscord className="w-6 h-6 text-dark group-hover:scale-110 transition-transform" />
-              <span className="font-bold text-dark text-base tracking-tight">Discord</span>
+              <SiDiscord className="w-6 h-6 text-[#0B3D2E] group-hover:scale-110 transition-transform" />
+              <span className="font-bold text-[#0B3D2E] text-base tracking-tight">Discord</span>
             </button>
 
             {/* Cloudflare Edge */}
@@ -496,8 +496,8 @@ export default function Home() {
               className="group focus:outline-none transition-opacity hover:opacity-100 flex items-center gap-2 cursor-pointer"
               title="Cloudflare Edge"
             >
-              <TbWorld className="w-6 h-6 text-dark group-hover:scale-110 transition-transform" />
-              <span className="font-bold text-dark text-base tracking-tight">Cloudflare</span>
+              <TbWorld className="w-6 h-6 text-[#0B3D2E] group-hover:scale-110 transition-transform" />
+              <span className="font-bold text-[#0B3D2E] text-base tracking-tight">Cloudflare</span>
             </button>
           </div>
         </section>
@@ -506,10 +506,10 @@ export default function Home() {
         <section id="services" className="mb-16 md:mb-24">
           {/* Section Heading Row */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 mb-10 md:mb-12">
-            <h2 className="inline-block self-start bg-lime text-dark text-2xl sm:text-[32px] font-bold px-3 py-1 rounded-lg leading-tight border border-dark/20">
+            <h2 className="inline-block self-start bg-[#A3D9B5] text-[#0B3D2E] text-2xl sm:text-[32px] font-bold px-3 py-1 rounded-lg leading-tight border border-[#0B3D2E]/20">
               Solusi &amp; Layanan
             </h2>
-            <p className="text-zinc-600 text-sm sm:text-[15px] max-w-[520px] leading-relaxed">
+            <p className="text-[#4F6F5E] text-sm sm:text-[15px] max-w-[520px] leading-relaxed">
               Arsitektur agen cerdas yang kami rekayasa dari fondasi terdalam untuk memangkas jam kerja manual, menjaga retensi pelanggan, dan melipatgandakan omset bisnis Anda:
             </p>
           </div>
@@ -517,22 +517,22 @@ export default function Home() {
           {/* 2x2 Services Grid (Neo-Brutalist Checkerboard) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-8">
             {/* Card 1: WhatsApp Ops (Light Card) */}
-            <article className="bg-light border border-dark rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
+            <article className="bg-[#EAF1EB] border border-[#0B3D2E] rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
               <div className="flex justify-between items-start gap-4">
                 <h3 className="flex flex-col items-start text-xl sm:text-2xl font-bold leading-snug">
-                  <span className="bg-lime px-2.5 py-0.5 rounded-md border border-dark/15">Autonomous WhatsApp</span>
-                  <span className="bg-lime px-2.5 py-0.5 rounded-md border border-dark/15 mt-1">Operations Agent</span>
+                  <span className="bg-[#A3D9B5] text-[#0B3D2E] px-2.5 py-0.5 rounded-md border border-[#0B3D2E]/20">Autonomous WhatsApp</span>
+                  <span className="bg-[#A3D9B5] text-[#0B3D2E] px-2.5 py-0.5 rounded-md border border-[#0B3D2E]/20 mt-1">Operations Agent</span>
                 </h3>
 
                 {/* Custom Vector Illustration */}
                 <div className="w-36 sm:w-44 flex-shrink-0 pt-2">
                   <svg viewBox="0 0 180 130" className="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="25" y="25" width="130" height="85" rx="14" fill="#FFFFFF" stroke="#07261E" strokeWidth="2" />
-                    <rect x="38" y="42" width="70" height="14" rx="4" fill="#B9FF66" stroke="#07261E" strokeWidth="1.2" />
-                    <rect x="68" y="66" width="72" height="22" rx="6" fill="#07261E" />
-                    <text x="76" y="81" fill="#FFFFFF" fontSize="10" fontFamily="Space Grotesk">Order Confirmed</text>
-                    <circle cx="140" cy="40" r="14" fill="#B9FF66" stroke="#07261E" strokeWidth="1.5" />
-                    <path d="M136 40L139 43L145 37" stroke="#07261E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <rect x="25" y="25" width="130" height="85" rx="14" fill="#FFFFFF" stroke="#0B3D2E" strokeWidth="2" />
+                    <rect x="38" y="42" width="70" height="14" rx="4" fill="#A3D9B5" stroke="#0B3D2E" strokeWidth="1.2" />
+                    <rect x="68" y="66" width="72" height="22" rx="6" fill="#0B3D2E" />
+                    <text x="76" y="81" fill="#F4F1E6" fontSize="10" fontFamily="Space Grotesk">Order Confirmed</text>
+                    <circle cx="140" cy="40" r="14" fill="#A3D9B5" stroke="#0B3D2E" strokeWidth="1.5" />
+                    <path d="M136 40L139 43L145 37" stroke="#0B3D2E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               </div>
@@ -541,37 +541,37 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => openModal(servicesData.whatsapp)}
-                  className="inline-flex items-center gap-3.5 text-dark font-medium text-[15px] focus:outline-none cursor-pointer"
+                  className="inline-flex items-center gap-3.5 text-[#0B3D2E] font-medium text-[15px] focus:outline-none cursor-pointer"
                 >
-                  <span className="w-9 h-9 rounded-full bg-dark text-lime flex items-center justify-center group-hover:rotate-45 transition-transform duration-200">
+                  <span className="w-9 h-9 rounded-full bg-[#0B3D2E] text-[#A3D9B5] flex items-center justify-center group-hover:rotate-45 transition-transform duration-200">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.4" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H8M17 7V16" />
                     </svg>
                   </span>
                   <span className="group-hover:underline underline-offset-4 font-bold">Pelajari Solusi</span>
                 </button>
-                <span className="text-xs font-mono text-zinc-500 font-semibold">24/7 Live Agent</span>
+                <span className="text-xs font-mono text-[#4F6F5E] font-semibold">24/7 Live Agent</span>
               </div>
             </article>
 
-            {/* Card 2: Private AI Infra (Dark Card) */}
-            <article className="bg-dark text-white border border-dark rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
+            {/* Card 2: Private AI Infra (Dark Card in Forest Green) */}
+            <article className="bg-[#0B3D2E] text-[#F4F1E6] border border-[#0B3D2E] rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
               <div className="flex justify-between items-start gap-4">
                 <h3 className="flex flex-col items-start text-xl sm:text-2xl font-bold leading-snug text-dark">
-                  <span className="bg-white px-2.5 py-0.5 rounded-md">Private AI Infra</span>
-                  <span className="bg-white px-2.5 py-0.5 rounded-md mt-1">&amp; Self-Hosted LLM</span>
+                  <span className="bg-[#F4F1E6] text-[#0B3D2E] px-2.5 py-0.5 rounded-md">Private AI Infra</span>
+                  <span className="bg-[#F4F1E6] text-[#0B3D2E] px-2.5 py-0.5 rounded-md mt-1">&amp; Self-Hosted LLM</span>
                 </h3>
 
                 {/* Custom Vector Illustration */}
                 <div className="w-36 sm:w-44 flex-shrink-0 pt-2">
                   <svg viewBox="0 0 180 130" className="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="30" y="20" width="120" height="90" rx="10" fill="#0B3D2E" stroke="#FFFFFF" strokeWidth="2" />
-                    <rect x="42" y="32" width="96" height="16" rx="4" fill="#FFFFFF" />
-                    <rect x="42" y="56" width="96" height="16" rx="4" fill="#B9FF66" stroke="#07261E" strokeWidth="1.2" />
-                    <rect x="42" y="80" width="96" height="16" rx="4" fill="#FFFFFF" />
-                    <circle cx="124" cy="40" r="3" fill="#07261E" />
-                    <circle cx="124" cy="64" r="3" fill="#07261E" />
-                    <circle cx="124" cy="88" r="3" fill="#07261E" />
+                    <rect x="30" y="20" width="120" height="90" rx="10" fill="#0E4D3A" stroke="#F4F1E6" strokeWidth="2" />
+                    <rect x="42" y="32" width="96" height="16" rx="4" fill="#F4F1E6" />
+                    <rect x="42" y="56" width="96" height="16" rx="4" fill="#A3D9B5" stroke="#0B3D2E" strokeWidth="1.2" />
+                    <rect x="42" y="80" width="96" height="16" rx="4" fill="#F4F1E6" />
+                    <circle cx="124" cy="40" r="3" fill="#0B3D2E" />
+                    <circle cx="124" cy="64" r="3" fill="#0B3D2E" />
+                    <circle cx="124" cy="88" r="3" fill="#0B3D2E" />
                   </svg>
                 </div>
               </div>
@@ -580,36 +580,36 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => openModal(servicesData.infra)}
-                  className="inline-flex items-center gap-3.5 text-white font-medium text-[15px] focus:outline-none cursor-pointer"
+                  className="inline-flex items-center gap-3.5 text-[#F4F1E6] font-medium text-[15px] focus:outline-none cursor-pointer"
                 >
-                  <span className="w-9 h-9 rounded-full bg-white text-dark flex items-center justify-center group-hover:rotate-45 transition-transform duration-200">
+                  <span className="w-9 h-9 rounded-full bg-[#F4F1E6] text-[#0B3D2E] flex items-center justify-center group-hover:rotate-45 transition-transform duration-200">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.4" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H8M17 7V16" />
                     </svg>
                   </span>
                   <span className="group-hover:underline underline-offset-4 font-bold">Pelajari Solusi</span>
                 </button>
-                <span className="text-xs font-mono text-lime font-semibold">100% Data Isolasi</span>
+                <span className="text-xs font-mono text-[#A3D9B5] font-semibold">100% Data Isolasi</span>
               </div>
             </article>
 
-            {/* Card 3: AlertFlow Engine (Dark Card) */}
-            <article className="bg-dark text-white border border-dark rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
+            {/* Card 3: AlertFlow Engine (Dark Card in Forest Green) */}
+            <article className="bg-[#0B3D2E] text-[#F4F1E6] border border-[#0B3D2E] rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
               <div className="flex justify-between items-start gap-4">
                 <h3 className="flex flex-col items-start text-xl sm:text-2xl font-bold leading-snug text-dark">
-                  <span className="bg-white px-2.5 py-0.5 rounded-md">AlertFlow Engine</span>
-                  <span className="bg-white px-2.5 py-0.5 rounded-md mt-1">Radar Multi-Platform</span>
+                  <span className="bg-[#F4F1E6] text-[#0B3D2E] px-2.5 py-0.5 rounded-md">AlertFlow Engine</span>
+                  <span className="bg-[#F4F1E6] text-[#0B3D2E] px-2.5 py-0.5 rounded-md mt-1">Radar Multi-Platform</span>
                 </h3>
 
                 {/* Custom Vector Illustration */}
                 <div className="w-36 sm:w-44 flex-shrink-0 pt-2">
                   <svg viewBox="0 0 180 130" className="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="90" cy="65" r="45" stroke="#FFFFFF" strokeWidth="1.5" strokeDasharray="4 4" />
-                    <circle cx="90" cy="65" r="30" stroke="#B9FF66" strokeWidth="2" />
-                    <circle cx="90" cy="65" r="14" fill="#B9FF66" />
-                    <line x1="90" y1="20" x2="90" y2="110" stroke="#FFFFFF" strokeWidth="1" />
-                    <line x1="45" y1="65" x2="135" y2="65" stroke="#FFFFFF" strokeWidth="1" />
-                    <circle cx="115" cy="50" r="5" fill="#FFFFFF" />
+                    <circle cx="90" cy="65" r="45" stroke="#F4F1E6" strokeWidth="1.5" strokeDasharray="4 4" />
+                    <circle cx="90" cy="65" r="30" stroke="#A3D9B5" strokeWidth="2" />
+                    <circle cx="90" cy="65" r="14" fill="#A3D9B5" />
+                    <line x1="90" y1="20" x2="90" y2="110" stroke="#F4F1E6" strokeWidth="1" />
+                    <line x1="45" y1="65" x2="135" y2="65" stroke="#F4F1E6" strokeWidth="1" />
+                    <circle cx="115" cy="50" r="5" fill="#F4F1E6" />
                   </svg>
                 </div>
               </div>
@@ -618,34 +618,34 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => openModal(servicesData.alertflow)}
-                  className="inline-flex items-center gap-3.5 text-white font-medium text-[15px] focus:outline-none cursor-pointer"
+                  className="inline-flex items-center gap-3.5 text-[#F4F1E6] font-medium text-[15px] focus:outline-none cursor-pointer"
                 >
-                  <span className="w-9 h-9 rounded-full bg-white text-dark flex items-center justify-center group-hover:rotate-45 transition-transform duration-200">
+                  <span className="w-9 h-9 rounded-full bg-[#F4F1E6] text-[#0B3D2E] flex items-center justify-center group-hover:rotate-45 transition-transform duration-200">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.4" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H8M17 7V16" />
                     </svg>
                   </span>
                   <span className="group-hover:underline underline-offset-4 font-bold">Pelajari Solusi</span>
                 </button>
-                <span className="text-xs font-mono text-lime font-semibold">&lt; 10s Event Loop</span>
+                <span className="text-xs font-mono text-[#A3D9B5] font-semibold">&lt; 10s Event Loop</span>
               </div>
             </article>
 
             {/* Card 4: Data Scraper & Pipeline (Light Card) */}
-            <article className="bg-light border border-dark rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
+            <article className="bg-[#EAF1EB] border border-[#0B3D2E] rounded-[32px] p-7 sm:p-9 shadow-brutal hover:shadow-brutal-hover transition-all duration-200 flex flex-col justify-between min-h-[280px] group">
               <div className="flex justify-between items-start gap-4">
                 <h3 className="flex flex-col items-start text-xl sm:text-2xl font-bold leading-snug">
-                  <span className="bg-lime px-2.5 py-0.5 rounded-md border border-dark/15">Custom Data Scraper</span>
-                  <span className="bg-lime px-2.5 py-0.5 rounded-md border border-dark/15 mt-1">&amp; Market Pipeline</span>
+                  <span className="bg-[#A3D9B5] text-[#0B3D2E] px-2.5 py-0.5 rounded-md border border-[#0B3D2E]/20">Custom Data Scraper</span>
+                  <span className="bg-[#A3D9B5] text-[#0B3D2E] px-2.5 py-0.5 rounded-md border border-[#0B3D2E]/20 mt-1">&amp; Market Pipeline</span>
                 </h3>
 
                 {/* Custom Vector Illustration */}
                 <div className="w-36 sm:w-44 flex-shrink-0 pt-2">
                   <svg viewBox="0 0 180 130" className="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M40 30L140 30L110 75L110 105L70 105L70 75Z" fill="#FFFFFF" stroke="#07261E" strokeWidth="2" />
-                    <rect x="75" y="85" width="30" height="10" fill="#B9FF66" stroke="#07261E" strokeWidth="1" />
-                    <line x1="55" y1="42" x2="125" y2="42" stroke="#07261E" strokeWidth="2" strokeLinecap="round" />
-                    <line x1="65" y1="55" x2="115" y2="55" stroke="#07261E" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M40 30L140 30L110 75L110 105L70 105L70 75Z" fill="#FFFFFF" stroke="#0B3D2E" strokeWidth="2" />
+                    <rect x="75" y="85" width="30" height="10" fill="#A3D9B5" stroke="#0B3D2E" strokeWidth="1" />
+                    <line x1="55" y1="42" x2="125" y2="42" stroke="#0B3D2E" strokeWidth="2" strokeLinecap="round" />
+                    <line x1="65" y1="55" x2="115" y2="55" stroke="#0B3D2E" strokeWidth="2" strokeLinecap="round" />
                   </svg>
                 </div>
               </div>
@@ -654,16 +654,16 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => openModal(servicesData.scraper)}
-                  className="inline-flex items-center gap-3.5 text-dark font-medium text-[15px] focus:outline-none cursor-pointer"
+                  className="inline-flex items-center gap-3.5 text-[#0B3D2E] font-medium text-[15px] focus:outline-none cursor-pointer"
                 >
-                  <span className="w-9 h-9 rounded-full bg-dark text-lime flex items-center justify-center group-hover:rotate-45 transition-transform duration-200">
+                  <span className="w-9 h-9 rounded-full bg-[#0B3D2E] text-[#A3D9B5] flex items-center justify-center group-hover:rotate-45 transition-transform duration-200">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.4" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H8M17 7V16" />
                     </svg>
                   </span>
                   <span className="group-hover:underline underline-offset-4 font-bold">Pelajari Solusi</span>
                 </button>
-                <span className="text-xs font-mono text-zinc-500 font-semibold">Clean Structured ETL</span>
+                <span className="text-xs font-mono text-[#4F6F5E] font-semibold">Clean Structured ETL</span>
               </div>
             </article>
           </div>
@@ -671,13 +671,13 @@ export default function Home() {
 
         {/* ================= CTA BANNER ("Wujudkan Otomasi Bisnis Anda") ================= */}
         <section className="mb-16 md:mb-24">
-          <div className="bg-light border border-dark rounded-[32px] px-7 sm:px-12 py-10 sm:py-12 relative overflow-visible grid grid-cols-1 md:grid-cols-12 items-center gap-8 shadow-brutal">
+          <div className="bg-[#EAF1EB] border border-[#0B3D2E] rounded-[32px] px-7 sm:px-12 py-10 sm:py-12 relative overflow-visible grid grid-cols-1 md:grid-cols-12 items-center gap-8 shadow-brutal">
             {/* Left Text & CTA */}
             <div className="md:col-span-7 space-y-5">
-              <h2 className="text-2xl sm:text-3xl font-bold text-dark">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B3D2E]">
                 Wujudkan Otomasi Bisnis Anda Bersama Kami
               </h2>
-              <p className="text-zinc-600 text-sm sm:text-[15px] leading-relaxed max-w-[440px]">
+              <p className="text-[#4F6F5E] text-sm sm:text-[15px] leading-relaxed max-w-[440px]">
                 Hubungi kami hari ini untuk menguji bagaimana sistem AI otonom dapat melipatgandakan kecepatan operasional dan penjualan perusahaan Anda tanpa risiko.
               </p>
               <div className="pt-1">
@@ -692,34 +692,34 @@ export default function Home() {
                       formHeading: "Request Proposal Gratis",
                     })
                   }
-                  className="font-mono-btn bg-dark text-white text-sm sm:text-[15px] px-7 py-4 rounded-xl hover:bg-lime hover:text-dark border border-dark hover:shadow-brutal-sm transition-all duration-200 active:translate-y-0.5 font-bold cursor-pointer"
+                  className="font-mono-btn bg-[#0B3D2E] text-[#F4F1E6] text-sm sm:text-[15px] px-7 py-4 rounded-xl hover:bg-[#A3D9B5] hover:text-[#0B3D2E] border border-[#0B3D2E] hover:shadow-brutal-sm transition-all duration-200 active:translate-y-0.5 font-bold cursor-pointer"
                 >
                   Dapatkan Proposal Kustom ↗
                 </button>
               </div>
             </div>
 
-            {/* Right Illustration: Character, Rings & Lime Star */}
+            {/* Right Illustration: Character, Rings & Mint Star */}
             <div className="md:col-span-5 flex justify-center md:justify-end">
               <div className="w-60 sm:w-72">
                 <svg viewBox="0 0 280 210" className="w-full h-auto overflow-visible" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse cx="140" cy="110" rx="88" ry="26" stroke="#07261E" strokeWidth="1.4" />
-                  <ellipse cx="140" cy="122" rx="88" ry="26" stroke="#07261E" strokeWidth="1.4" />
-                  <ellipse cx="140" cy="134" rx="88" ry="26" stroke="#07261E" strokeWidth="1.4" strokeDasharray="3 3" />
+                  <ellipse cx="140" cy="110" rx="88" ry="26" stroke="#0B3D2E" strokeWidth="1.4" />
+                  <ellipse cx="140" cy="122" rx="88" ry="26" stroke="#0B3D2E" strokeWidth="1.4" />
+                  <ellipse cx="140" cy="134" rx="88" ry="26" stroke="#0B3D2E" strokeWidth="1.4" strokeDasharray="3 3" />
 
-                  {/* Character Sphere */}
+                  {/* Character Sphere in Forest Green */}
                   <g className="animate-float">
-                    <circle cx="135" cy="78" r="34" fill="#07261E" />
-                    <ellipse cx="125" cy="76" rx="4.5" ry="10" fill="#FFFFFF" />
-                    <ellipse cx="145" cy="76" rx="4.5" ry="10" fill="#FFFFFF" />
+                    <circle cx="135" cy="78" r="34" fill="#0B3D2E" />
+                    <ellipse cx="125" cy="76" rx="4.5" ry="10" fill="#F4F1E6" />
+                    <ellipse cx="145" cy="76" rx="4.5" ry="10" fill="#F4F1E6" />
                   </g>
 
-                  {/* Lime Star */}
+                  {/* Mint Green Star */}
                   <path
                     className="animate-star"
                     style={{ transformOrigin: "124px 168px" }}
                     d="M124 128C130 154 136 160 162 168C136 176 130 182 124 208C118 182 112 176 86 168C112 160 118 154 124 128Z"
-                    fill="#B9FF66"
+                    fill="#A3D9B5"
                   />
                 </svg>
               </div>
@@ -731,26 +731,26 @@ export default function Home() {
         <section id="case-studies" className="mb-16 md:mb-24">
           {/* Section Heading Row */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 mb-10 md:mb-12">
-            <h2 className="inline-block self-start bg-lime text-dark text-2xl sm:text-[32px] font-bold px-3 py-1 rounded-lg leading-tight border border-dark/20">
+            <h2 className="inline-block self-start bg-[#A3D9B5] text-[#0B3D2E] text-2xl sm:text-[32px] font-bold px-3 py-1 rounded-lg leading-tight border border-[#0B3D2E]/20">
               Studi Kasus
             </h2>
-            <p className="text-zinc-600 text-sm sm:text-[15px] max-w-[480px] leading-relaxed">
+            <p className="text-[#4F6F5E] text-sm sm:text-[15px] max-w-[480px] leading-relaxed">
               Hasil nyata implementasi sistem AI otonom yang langsung menggerakkan flywheel operasional klien kami:
             </p>
           </div>
 
-          {/* Dark 3-Column Container */}
-          <div className="bg-dark text-white rounded-[32px] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-0 lg:divide-x lg:divide-zinc-700 shadow-brutal">
+          {/* Dark 3-Column Container in Forest Green */}
+          <div className="bg-[#0B3D2E] text-[#F4F1E6] rounded-[32px] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-0 lg:divide-x lg:divide-[#4F6F5E]/40 border border-[#0B3D2E] shadow-brutal">
             {/* Case 1 */}
             <div className="lg:pr-10 flex flex-col justify-between gap-6">
-              <p className="text-zinc-200 text-sm sm:text-[15px] leading-relaxed">
+              <p className="text-[#F4F1E6]/90 text-sm sm:text-[15px] leading-relaxed">
                 Untuk biro travel umroh, agen WhatsApp otonom menjawab konsultasi dan simulasi biaya jam 2 pagi secara instan, menghasilkan peningkatan konversi booking hingga 42%.
               </p>
               <div>
                 <button
                   type="button"
                   onClick={() => openModal(caseStudyData.umroh)}
-                  className="inline-flex items-center gap-2.5 text-lime font-medium text-[15px] hover:underline underline-offset-4 group focus:outline-none cursor-pointer"
+                  className="inline-flex items-center gap-2.5 text-[#A3D9B5] font-medium text-[15px] hover:text-[#C7925B] hover:underline underline-offset-4 group focus:outline-none cursor-pointer"
                 >
                   <span>Lihat Detail Studi</span>
                   <svg className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
@@ -761,15 +761,15 @@ export default function Home() {
             </div>
 
             {/* Case 2 */}
-            <div className="lg:px-10 pt-8 lg:pt-0 border-t border-zinc-700 lg:border-t-0 flex flex-col justify-between gap-6">
-              <p className="text-zinc-200 text-sm sm:text-[15px] leading-relaxed">
+            <div className="lg:px-10 pt-8 lg:pt-0 border-t border-[#4F6F5E]/40 lg:border-t-0 flex flex-col justify-between gap-6">
+              <p className="text-[#F4F1E6]/90 text-sm sm:text-[15px] leading-relaxed">
                 Untuk jaringan komunitas kreator, AlertFlow mendeteksi postingan dan siaran live dalam &lt;10 detik, mem-broadcast notifikasi terkontrol ke 8 server Discord tanpa spam dobel.
               </p>
               <div>
                 <button
                   type="button"
                   onClick={() => openModal(caseStudyData.creator)}
-                  className="inline-flex items-center gap-2.5 text-lime font-medium text-[15px] hover:underline underline-offset-4 group focus:outline-none cursor-pointer"
+                  className="inline-flex items-center gap-2.5 text-[#A3D9B5] font-medium text-[15px] hover:text-[#C7925B] hover:underline underline-offset-4 group focus:outline-none cursor-pointer"
                 >
                   <span>Lihat Detail Studi</span>
                   <svg className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
@@ -780,15 +780,15 @@ export default function Home() {
             </div>
 
             {/* Case 3 */}
-            <div className="lg:pl-10 pt-8 lg:pt-0 border-t border-zinc-700 lg:border-t-0 flex flex-col justify-between gap-6">
-              <p className="text-zinc-200 text-sm sm:text-[15px] leading-relaxed">
+            <div className="lg:pl-10 pt-8 lg:pt-0 border-t border-[#4F6F5E]/40 lg:border-t-0 flex flex-col justify-between gap-6">
+              <p className="text-[#F4F1E6]/90 text-sm sm:text-[15px] leading-relaxed">
                 Untuk klinik dan bisnis berdata sensitif, arsitektur self-hosted LLM memproses rekam SOP secara lokal di VPS terisolasi tanpa ada satupun bit data yang keluar ke vendor pihak ketiga.
               </p>
               <div>
                 <button
                   type="button"
                   onClick={() => openModal(caseStudyData.enterprise)}
-                  className="inline-flex items-center gap-2.5 text-lime font-medium text-[15px] hover:underline underline-offset-4 group focus:outline-none cursor-pointer"
+                  className="inline-flex items-center gap-2.5 text-[#A3D9B5] font-medium text-[15px] hover:text-[#C7925B] hover:underline underline-offset-4 group focus:outline-none cursor-pointer"
                 >
                   <span>Lihat Detail Studi</span>
                   <svg className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
@@ -804,23 +804,23 @@ export default function Home() {
         <section id="pricing-section" className="mb-16 md:mb-20 pt-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div className="flex flex-col sm:flex-row sm:items-center gap-5">
-              <h2 className="inline-block self-start bg-lime text-dark text-2xl sm:text-[28px] font-bold px-3 py-1 rounded-lg leading-tight border border-dark/20">
+              <h2 className="inline-block self-start bg-[#A3D9B5] text-[#0B3D2E] text-2xl sm:text-[28px] font-bold px-3 py-1 rounded-lg leading-tight border border-[#0B3D2E]/20">
                 Paket &amp; Wawasan
               </h2>
-              <p className="text-zinc-600 text-sm sm:text-[15px] max-w-[460px]">
+              <p className="text-[#4F6F5E] text-sm sm:text-[15px] max-w-[460px]">
                 Skema implementasi transparan dan playbook rekayasa otomasi yang disesuaikan dengan skala bisnis Anda.
               </p>
             </div>
 
             {/* View Switcher Tabs */}
-            <div className="inline-flex bg-light p-1.5 rounded-2xl border border-dark self-start">
+            <div className="inline-flex bg-[#EAF1EB] p-1.5 rounded-2xl border border-[#0B3D2E] self-start">
               <button
                 type="button"
                 onClick={() => setActiveTab("pricing")}
                 className={`px-4 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer ${
                   activeTab === "pricing"
-                    ? "bg-dark text-white"
-                    : "text-dark hover:bg-lime/50"
+                    ? "bg-[#0B3D2E] text-[#F4F1E6]"
+                    : "text-[#0B3D2E] hover:bg-[#A3D9B5]/50"
                 }`}
               >
                 Paket Layanan
@@ -830,8 +830,8 @@ export default function Home() {
                 onClick={() => setActiveTab("blog")}
                 className={`px-4 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer ${
                   activeTab === "blog"
-                    ? "bg-dark text-white"
-                    : "text-dark hover:bg-lime/50"
+                    ? "bg-[#0B3D2E] text-[#F4F1E6]"
+                    : "text-[#0B3D2E] hover:bg-[#A3D9B5]/50"
                 }`}
               >
                 Wawasan AI
@@ -843,29 +843,29 @@ export default function Home() {
           {activeTab === "pricing" && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Starter */}
-              <div className="bg-light border border-dark rounded-[28px] p-7 shadow-brutal-sm flex flex-col justify-between">
+              <div className="bg-[#EAF1EB] border border-[#0B3D2E] rounded-[28px] p-7 shadow-brutal-sm flex flex-col justify-between">
                 <div>
-                  <span className="inline-block bg-white border border-dark text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+                  <span className="inline-block bg-[#F4F1E6] border border-[#0B3D2E] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 text-[#0B3D2E]">
                     Starter Pilot
                   </span>
                   <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-3xl font-bold">Rp 2,5 Jt</span>
-                    <span className="text-zinc-500 text-sm">/bulan</span>
+                    <span className="text-3xl font-bold text-[#0B3D2E]">Rp 2,5 Jt</span>
+                    <span className="text-[#4F6F5E] text-sm">/bulan</span>
                   </div>
-                  <p className="text-zinc-600 text-sm mb-6">
+                  <p className="text-[#4F6F5E] text-sm mb-6">
                     Ideal untuk UMKM, travel, atau klinik yang ingin mengotomasi respon WhatsApp 24/7.
                   </p>
-                  <ul className="space-y-2.5 text-sm text-dark mb-6">
+                  <ul className="space-y-2.5 text-sm text-[#0B3D2E] mb-6">
                     <li className="flex items-center gap-2">
-                      <span className="w-4 h-4 rounded-full bg-lime border border-dark inline-block flex-shrink-0" />
+                      <span className="w-4 h-4 rounded-full bg-[#A3D9B5] border border-[#0B3D2E] inline-block flex-shrink-0" />
                       1 Nomor WhatsApp Bisnis Otonom 24/7
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-4 h-4 rounded-full bg-lime border border-dark inline-block flex-shrink-0" />
+                      <span className="w-4 h-4 rounded-full bg-[#A3D9B5] border border-[#0B3D2E] inline-block flex-shrink-0" />
                       Integrasi Google Sheets Leads Auto-Sync
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-4 h-4 rounded-full bg-lime border border-dark inline-block flex-shrink-0" />
+                      <span className="w-4 h-4 rounded-full bg-[#A3D9B5] border border-[#0B3D2E] inline-block flex-shrink-0" />
                       SOP Khusus Bisnis &amp; Human Hand-off
                     </li>
                   </ul>
@@ -882,36 +882,36 @@ export default function Home() {
                       formHeading: "Konfirmasi Paket Starter Pilot",
                     })
                   }
-                  className="font-mono-btn w-full py-3 rounded-xl border border-dark bg-white hover:bg-lime font-bold text-sm transition-colors cursor-pointer"
+                  className="font-mono-btn w-full py-3 rounded-xl border border-[#0B3D2E] bg-white hover:bg-[#A3D9B5] text-[#0B3D2E] font-bold text-sm transition-colors cursor-pointer"
                 >
                   Pilih Starter
                 </button>
               </div>
 
-              {/* Growth Pro (Featured Dark Card) */}
-              <div className="bg-dark text-white border border-dark rounded-[28px] p-7 shadow-brutal flex flex-col justify-between">
+              {/* Growth Pro (Featured Dark Card in Forest Green) */}
+              <div className="bg-[#0B3D2E] text-[#F4F1E6] border border-[#0B3D2E] rounded-[28px] p-7 shadow-brutal flex flex-col justify-between">
                 <div>
-                  <span className="inline-block bg-lime text-dark text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+                  <span className="inline-block bg-[#A3D9B5] text-[#0B3D2E] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
                     Paling Populer
                   </span>
                   <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-3xl font-bold">Rp 6,0 Jt</span>
-                    <span className="text-zinc-400 text-sm">/bulan</span>
+                    <span className="text-3xl font-bold text-[#F4F1E6]">Rp 6,0 Jt</span>
+                    <span className="text-[#A3D9B5] text-sm">/bulan</span>
                   </div>
-                  <p className="text-zinc-300 text-sm mb-6">
+                  <p className="text-[#F4F1E6]/80 text-sm mb-6">
                     Solusi lengkap otomasi WhatsApp multi-cabang ditambah radar event AlertFlow.
                   </p>
-                  <ul className="space-y-2.5 text-sm text-zinc-200 mb-6">
+                  <ul className="space-y-2.5 text-sm text-[#F4F1E6]/90 mb-6">
                     <li className="flex items-center gap-2">
-                      <span className="w-4 h-4 rounded-full bg-lime inline-block flex-shrink-0" />
+                      <span className="w-4 h-4 rounded-full bg-[#A3D9B5] inline-block flex-shrink-0" />
                       Hingga 3 Nomor WhatsApp &amp; Routing Cabang
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-4 h-4 rounded-full bg-lime inline-block flex-shrink-0" />
+                      <span className="w-4 h-4 rounded-full bg-[#A3D9B5] inline-block flex-shrink-0" />
                       AlertFlow Radar Komunitas (Discord / Telegram)
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-4 h-4 rounded-full bg-lime inline-block flex-shrink-0" />
+                      <span className="w-4 h-4 rounded-full bg-[#A3D9B5] inline-block flex-shrink-0" />
                       Database Dedicated &amp; Dashboard Pemantau
                     </li>
                   </ul>
@@ -928,36 +928,36 @@ export default function Home() {
                       formHeading: "Konfirmasi Paket Growth Pro",
                     })
                   }
-                  className="font-mono-btn w-full py-3 rounded-xl bg-lime text-dark hover:bg-white font-bold text-sm transition-colors cursor-pointer"
+                  className="font-mono-btn w-full py-3 rounded-xl bg-[#A3D9B5] text-[#0B3D2E] hover:bg-[#F4F1E6] font-bold text-sm transition-colors cursor-pointer"
                 >
                   Pilih Growth Pro
                 </button>
               </div>
 
               {/* Enterprise */}
-              <div className="bg-light border border-dark rounded-[28px] p-7 shadow-brutal-sm flex flex-col justify-between">
+              <div className="bg-[#EAF1EB] border border-[#0B3D2E] rounded-[28px] p-7 shadow-brutal-sm flex flex-col justify-between">
                 <div>
-                  <span className="inline-block bg-white border border-dark text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+                  <span className="inline-block bg-[#F4F1E6] border border-[#0B3D2E] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 text-[#0B3D2E]">
                     Enterprise
                   </span>
                   <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-3xl font-bold">Kustom</span>
-                    <span className="text-zinc-500 text-sm">/kebutuhan</span>
+                    <span className="text-3xl font-bold text-[#0B3D2E]">Kustom</span>
+                    <span className="text-[#4F6F5E] text-sm">/kebutuhan</span>
                   </div>
-                  <p className="text-zinc-600 text-sm mb-6">
+                  <p className="text-[#4F6F5E] text-sm mb-6">
                     Infrastruktur AI mandiri on-premise, pipeline scraper ribuan SKU, dan arsitektur data privat.
                   </p>
-                  <ul className="space-y-2.5 text-sm text-dark mb-6">
+                  <ul className="space-y-2.5 text-sm text-[#0B3D2E] mb-6">
                     <li className="flex items-center gap-2">
-                      <span className="w-4 h-4 rounded-full bg-lime border border-dark inline-block flex-shrink-0" />
+                      <span className="w-4 h-4 rounded-full bg-[#A3D9B5] border border-[#0B3D2E] inline-block flex-shrink-0" />
                       Self-Hosted LLM di Server Mandiri Klien
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-4 h-4 rounded-full bg-lime border border-dark inline-block flex-shrink-0" />
+                      <span className="w-4 h-4 rounded-full bg-[#A3D9B5] border border-[#0B3D2E] inline-block flex-shrink-0" />
                       Custom Data Scraping &amp; Market Intelligence
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-4 h-4 rounded-full bg-lime border border-dark inline-block flex-shrink-0" />
+                      <span className="w-4 h-4 rounded-full bg-[#A3D9B5] border border-[#0B3D2E] inline-block flex-shrink-0" />
                       Tim Arsitek Khusus &amp; Retainer Eksklusif
                     </li>
                   </ul>
@@ -974,7 +974,7 @@ export default function Home() {
                       formHeading: "Request Diskusi Enterprise",
                     })
                   }
-                  className="font-mono-btn w-full py-3 rounded-xl border border-dark bg-white hover:bg-lime font-bold text-sm transition-colors cursor-pointer"
+                  className="font-mono-btn w-full py-3 rounded-xl border border-[#0B3D2E] bg-white hover:bg-[#A3D9B5] text-[#0B3D2E] font-bold text-sm transition-colors cursor-pointer"
                 >
                   Hubungi Arsitek
                 </button>
@@ -985,60 +985,60 @@ export default function Home() {
           {/* Blog / Wawasan Tab Panel */}
           {activeTab === "blog" && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <article className="bg-light border border-dark rounded-[28px] p-7 shadow-brutal-sm flex flex-col justify-between">
+              <article className="bg-[#EAF1EB] border border-[#0B3D2E] rounded-[28px] p-7 shadow-brutal-sm flex flex-col justify-between">
                 <div>
-                  <span className="inline-block bg-lime text-dark text-xs font-bold px-2.5 py-1 rounded-md mb-3 border border-dark/20">
+                  <span className="inline-block bg-[#A3D9B5] text-[#0B3D2E] text-xs font-bold px-2.5 py-1 rounded-md mb-3 border border-[#0B3D2E]/20">
                     Arsitektur Agen
                   </span>
-                  <h3 className="text-lg font-bold mb-2">Mengapa Chatbot Rule-Based Ketinggalan Zaman</h3>
-                  <p className="text-zinc-600 text-sm mb-4">
+                  <h3 className="text-lg font-bold mb-2 text-[#0B3D2E]">Mengapa Chatbot Rule-Based Ketinggalan Zaman</h3>
+                  <p className="text-[#4F6F5E] text-sm mb-4">
                     Bagaimana agen berbasis context-memory memproses bahasa natural tanpa membuat prospek Anda frustrasi dengan opsi angka kaku.
                   </p>
                 </div>
                 <button
                   type="button"
                   onClick={() => openModal(servicesData.whatsapp)}
-                  className="text-sm font-bold inline-flex items-center gap-2 hover:underline cursor-pointer"
+                  className="text-sm font-bold inline-flex items-center gap-2 hover:underline text-[#0B3D2E] cursor-pointer"
                 >
                   <span>Baca ringkasan teknis</span>
                   <span>↗</span>
                 </button>
               </article>
 
-              <article className="bg-light border border-dark rounded-[28px] p-7 shadow-brutal-sm flex flex-col justify-between">
+              <article className="bg-[#EAF1EB] border border-[#0B3D2E] rounded-[28px] p-7 shadow-brutal-sm flex flex-col justify-between">
                 <div>
-                  <span className="inline-block bg-lime text-dark text-xs font-bold px-2.5 py-1 rounded-md mb-3 border border-dark/20">
+                  <span className="inline-block bg-[#A3D9B5] text-[#0B3D2E] text-xs font-bold px-2.5 py-1 rounded-md mb-3 border border-[#0B3D2E]/20">
                     Keamanan Data
                   </span>
-                  <h3 className="text-lg font-bold mb-2">Mencegah Kebocoran Data Rahasia Perusahaan</h3>
-                  <p className="text-zinc-600 text-sm mb-4">
+                  <h3 className="text-lg font-bold mb-2 text-[#0B3D2E]">Mencegah Kebocoran Data Rahasia Perusahaan</h3>
+                  <p className="text-[#4F6F5E] text-sm mb-4">
                     Strategi isolasi container dan self-hosted LLM untuk menjaga dokumen internal tidak dijadikan bahan pelatihan model cloud publik.
                   </p>
                 </div>
                 <button
                   type="button"
                   onClick={() => openModal(servicesData.infra)}
-                  className="text-sm font-bold inline-flex items-center gap-2 hover:underline cursor-pointer"
+                  className="text-sm font-bold inline-flex items-center gap-2 hover:underline text-[#0B3D2E] cursor-pointer"
                 >
                   <span>Baca ringkasan teknis</span>
                   <span>↗</span>
                 </button>
               </article>
 
-              <article className="bg-light border border-dark rounded-[28px] p-7 shadow-brutal-sm flex flex-col justify-between">
+              <article className="bg-[#EAF1EB] border border-[#0B3D2E] rounded-[28px] p-7 shadow-brutal-sm flex flex-col justify-between">
                 <div>
-                  <span className="inline-block bg-lime text-dark text-xs font-bold px-2.5 py-1 rounded-md mb-3 border border-dark/20">
+                  <span className="inline-block bg-[#A3D9B5] text-[#0B3D2E] text-xs font-bold px-2.5 py-1 rounded-md mb-3 border border-[#0B3D2E]/20">
                     Otomasi Penjualan
                   </span>
-                  <h3 className="text-lg font-bold mb-2">Menangkap Leads Tengah Malam Secara Realtime</h3>
-                  <p className="text-zinc-600 text-sm mb-4">
+                  <h3 className="text-lg font-bold mb-2 text-[#0B3D2E]">Menangkap Leads Tengah Malam Secara Realtime</h3>
+                  <p className="text-[#4F6F5E] text-sm mb-4">
                     Data empiris mengapa jeda respon di atas 15 menit menurunkan probabilitas closing sebesar 80% pada pasar digital Indonesia.
                   </p>
                 </div>
                 <button
                   type="button"
                   onClick={() => openModal(caseStudyData.umroh)}
-                  className="text-sm font-bold inline-flex items-center gap-2 hover:underline cursor-pointer"
+                  className="text-sm font-bold inline-flex items-center gap-2 hover:underline text-[#0B3D2E] cursor-pointer"
                 >
                   <span>Baca ringkasan teknis</span>
                   <span>↗</span>
@@ -1050,17 +1050,17 @@ export default function Home() {
 
         {/* ================= ARSITEK / FOUNDER PROFILE ================= */}
         <section id="arsitek" className="py-12 mb-16 md:mb-20">
-          <div className="p-8 sm:p-10 rounded-[32px] bg-light border border-dark shadow-brutal flex flex-col md:flex-row items-center gap-8">
-            <div className="w-24 h-24 rounded-2xl bg-dark border-2 border-lime flex items-center justify-center text-lime font-black text-3xl shadow-brutal-sm shrink-0">
+          <div className="p-8 sm:p-10 rounded-[32px] bg-[#EAF1EB] border border-[#0B3D2E] shadow-brutal flex flex-col md:flex-row items-center gap-8">
+            <div className="w-24 h-24 rounded-2xl bg-[#0B3D2E] border-2 border-[#A3D9B5] flex items-center justify-center text-[#A3D9B5] font-black text-3xl shadow-brutal-sm shrink-0">
               RP
             </div>
 
             <div className="flex-1 text-center md:text-left">
-              <span className="text-[11px] font-mono text-dark font-bold uppercase tracking-widest block mb-1">
+              <span className="text-[11px] font-mono text-[#0B3D2E] font-bold uppercase tracking-widest block mb-1">
                 Founder &amp; AI Systems Architect
               </span>
-              <h3 className="text-2xl font-bold text-dark mb-2">Raka Putra Pratidina</h3>
-              <p className="text-sm text-zinc-600 leading-relaxed mb-5">
+              <h3 className="text-2xl font-bold text-[#0B3D2E] mb-2">Raka Putra Pratidina</h3>
+              <p className="text-sm text-[#4F6F5E] leading-relaxed mb-5">
                 Spesialis rekayasa sistem agen otonom, infrastruktur backend mandiri, web intelligence, dan automasi proses bisnis nyata. Membangun Akar Poros sebagai studio teknologi yang mentransformasi kapabilitas AI menjadi pengungkit omset dan efisiensi operasional bisnis.
               </p>
 
@@ -1069,20 +1069,20 @@ export default function Home() {
                   href="https://rakaputra.dev"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-dark hover:underline underline-offset-4"
+                  className="inline-flex items-center gap-1.5 text-[#0B3D2E] hover:underline underline-offset-4"
                 >
                   <span>rakaputra.dev</span>
-                  <TbArrowUpRight className="w-3.5 h-3.5 text-dark" />
+                  <TbArrowUpRight className="w-3.5 h-3.5 text-[#0B3D2E]" />
                 </a>
-                <span className="text-zinc-400">•</span>
+                <span className="text-[#4F6F5E]">•</span>
                 <a
                   href="https://github.com/Akarptra"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-dark hover:underline underline-offset-4"
+                  className="inline-flex items-center gap-1.5 text-[#0B3D2E] hover:underline underline-offset-4"
                 >
                   <span>GitHub Profile</span>
-                  <TbArrowUpRight className="w-3.5 h-3.5 text-dark" />
+                  <TbArrowUpRight className="w-3.5 h-3.5 text-[#0B3D2E]" />
                 </a>
               </div>
             </div>
@@ -1090,30 +1090,30 @@ export default function Home() {
         </section>
 
         {/* ================= FOOTER ================= */}
-        <footer className="bg-dark text-white rounded-[32px] p-8 sm:p-12 shadow-brutal">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-zinc-700">
+        <footer className="bg-[#0B3D2E] text-[#F4F1E6] rounded-[32px] p-8 sm:p-12 shadow-brutal border border-[#0B3D2E]">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-[#4F6F5E]/40">
             <a href="#hero" className="flex items-center gap-2.5">
               <AkarPorosLogo size="sm" theme="dark" showTagline={false} />
             </a>
-            <div className="flex flex-wrap gap-6 text-sm text-zinc-300">
-              <button onClick={() => scrollToSection("about")} className="hover:text-lime transition-colors cursor-pointer">
+            <div className="flex flex-wrap gap-6 text-sm text-[#F4F1E6]/80">
+              <button onClick={() => scrollToSection("about")} className="hover:text-[#A3D9B5] transition-colors cursor-pointer">
                 Tentang Kami
               </button>
-              <button onClick={() => scrollToSection("services")} className="hover:text-lime transition-colors cursor-pointer">
+              <button onClick={() => scrollToSection("services")} className="hover:text-[#A3D9B5] transition-colors cursor-pointer">
                 Solusi &amp; Layanan
               </button>
-              <button onClick={() => scrollToSection("case-studies")} className="hover:text-lime transition-colors cursor-pointer">
+              <button onClick={() => scrollToSection("case-studies")} className="hover:text-[#A3D9B5] transition-colors cursor-pointer">
                 Studi Kasus
               </button>
-              <button onClick={() => scrollToSection("pricing-section")} className="hover:text-lime transition-colors cursor-pointer">
+              <button onClick={() => scrollToSection("pricing-section")} className="hover:text-[#A3D9B5] transition-colors cursor-pointer">
                 Paket Biaya
               </button>
             </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 items-center">
-            <div className="lg:col-span-5 space-y-2 text-sm text-zinc-300">
-              <span className="inline-block bg-lime text-dark font-bold px-2.5 py-0.5 rounded text-xs mb-1">
+            <div className="lg:col-span-5 space-y-2 text-sm text-[#F4F1E6]/80">
+              <span className="inline-block bg-[#A3D9B5] text-[#0B3D2E] font-bold px-2.5 py-0.5 rounded text-xs mb-1">
                 Kontak Studio:
               </span>
               <p>WhatsApp: +62 812-2061-9281</p>
@@ -1123,7 +1123,7 @@ export default function Home() {
 
             <form
               onSubmit={handleNewsletterSubmit}
-              className="lg:col-span-7 bg-zinc-800/90 p-5 sm:p-6 rounded-2xl flex flex-col sm:flex-row gap-3 border border-zinc-700"
+              className="lg:col-span-7 bg-[#0E4D3A] p-5 sm:p-6 rounded-2xl flex flex-col sm:flex-row gap-3 border border-[#4F6F5E]/40"
             >
               <label htmlFor="newsletter-email" className="sr-only">
                 Email address
@@ -1135,20 +1135,20 @@ export default function Home() {
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder="Masukkan email Anda"
-                className="flex-1 bg-dark border border-zinc-600 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-400 focus:outline-none focus:border-lime"
+                className="flex-1 bg-[#0B3D2E] border border-[#4F6F5E] rounded-xl px-4 py-3 text-sm text-[#F4F1E6] placeholder-[#4F6F5E] focus:outline-none focus:border-[#A3D9B5]"
               />
               <button
                 type="submit"
-                className="font-mono-btn bg-lime text-dark font-bold text-sm px-6 py-3 rounded-xl hover:bg-white transition-colors cursor-pointer"
+                className="font-mono-btn bg-[#A3D9B5] text-[#0B3D2E] font-bold text-sm px-6 py-3 rounded-xl hover:bg-[#F4F1E6] transition-colors cursor-pointer"
               >
                 Berlangganan Wawasan
               </button>
             </form>
           </div>
 
-          <div className="pt-8 mt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-400 gap-4">
+          <div className="pt-8 mt-8 border-t border-[#4F6F5E]/40 flex flex-col sm:flex-row items-center justify-between text-xs text-[#F4F1E6]/60 gap-4">
             <span>© {new Date().getFullYear()} PT Akar Poros Teknologi. Seluruh hak cipta dilindungi.</span>
-            <span className="font-mono text-zinc-500">Membangun sistem AI dari akarnya.</span>
+            <span className="font-mono text-[#A3D9B5]">Membangun sistem AI dari akarnya.</span>
           </div>
         </footer>
       </div>
@@ -1156,36 +1156,36 @@ export default function Home() {
       {/* ================= INTERACTIVE MODAL (Proposal / Consultation) ================= */}
       {modalOpen && modalConfig && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-dark/60 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#07261E]/70 backdrop-blur-sm p-4"
           onClick={closeModal}
         >
           <div
-            className="bg-white border-2 border-dark rounded-[32px] shadow-brutal max-w-lg w-full p-7 sm:p-9 relative max-h-[90vh] overflow-y-auto"
+            className="bg-white border-2 border-[#0B3D2E] rounded-[32px] shadow-brutal max-w-lg w-full p-7 sm:p-9 relative max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               aria-label="Tutup modal"
               onClick={closeModal}
-              className="absolute top-6 right-6 w-9 h-9 rounded-full bg-light border border-dark flex items-center justify-center hover:bg-lime transition-colors cursor-pointer font-bold"
+              className="absolute top-6 right-6 w-9 h-9 rounded-full bg-[#EAF1EB] border border-[#0B3D2E] flex items-center justify-center hover:bg-[#A3D9B5] transition-colors cursor-pointer font-bold"
             >
               ✕
             </button>
 
             {/* Dynamic Modal Content Container */}
             <div>
-              <span className="inline-block bg-lime text-dark text-xs font-bold px-2.5 py-1 rounded-md mb-3 border border-dark/20">
+              <span className="inline-block bg-[#A3D9B5] text-[#0B3D2E] text-xs font-bold px-2.5 py-1 rounded-md mb-3 border border-[#0B3D2E]/20">
                 {modalConfig.badge}
               </span>
-              <h3 className="text-2xl font-bold text-dark leading-snug mb-2">{modalConfig.title}</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">{modalConfig.desc}</p>
+              <h3 className="text-2xl font-bold text-[#0B3D2E] leading-snug mb-2">{modalConfig.title}</h3>
+              <p className="text-[#4F6F5E] text-sm leading-relaxed">{modalConfig.desc}</p>
 
               {modalConfig.metrics && modalConfig.metrics.length > 0 && (
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mt-4">
                   {modalConfig.metrics.map((m, idx) => (
                     <div
                       key={idx}
-                      className="bg-light border border-dark rounded-xl px-3 py-2 text-xs font-bold text-dark text-center"
+                      className="bg-[#EAF1EB] border border-[#0B3D2E] rounded-xl px-3 py-2 text-xs font-bold text-[#0B3D2E] text-center"
                     >
                       {m}
                     </div>
@@ -1195,12 +1195,12 @@ export default function Home() {
             </div>
 
             {/* Shared Lead Form inside Modal */}
-            <form onSubmit={handleModalSubmit} className="mt-6 pt-6 border-t border-zinc-200 space-y-4">
-              <h4 className="text-base font-bold text-dark">
+            <form onSubmit={handleModalSubmit} className="mt-6 pt-6 border-t border-[#0B3D2E]/15 space-y-4">
+              <h4 className="text-base font-bold text-[#0B3D2E]">
                 {modalConfig.formHeading || "Formulir Konsultasi & Proposal"}
               </h4>
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#4F6F5E] mb-1">
                   Nama Lengkap
                 </label>
                 <input
@@ -1209,12 +1209,12 @@ export default function Home() {
                   value={formName}
                   onChange={(e) => setFormName(e.target.value)}
                   placeholder="Budi Santoso"
-                  className="w-full border border-dark rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-lime"
+                  className="w-full border border-[#0B3D2E] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#A3D9B5]"
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-1">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[#4F6F5E] mb-1">
                     Email Kerja / WhatsApp
                   </label>
                   <input
@@ -1223,17 +1223,17 @@ export default function Home() {
                     value={formEmail}
                     onChange={(e) => setFormEmail(e.target.value)}
                     placeholder="budi@perusahaan.com"
-                    className="w-full border border-dark rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-lime"
+                    className="w-full border border-[#0B3D2E] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#A3D9B5]"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-1">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[#4F6F5E] mb-1">
                     Fokus Solusi
                   </label>
                   <select
                     value={formService}
                     onChange={(e) => setFormService(e.target.value)}
-                    className="w-full border border-dark rounded-xl px-3 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-lime"
+                    className="w-full border border-[#0B3D2E] rounded-xl px-3 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#A3D9B5]"
                   >
                     <option value="Autonomous WhatsApp Operations">Autonomous WhatsApp Operations</option>
                     <option value="Private Self-Hosted AI Infrastructure">Private AI Infrastructure</option>
@@ -1244,7 +1244,7 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#4F6F5E] mb-1">
                   Target Bisnis / Kebutuhan
                 </label>
                 <textarea
@@ -1252,12 +1252,12 @@ export default function Home() {
                   value={formGoals}
                   onChange={(e) => setFormGoals(e.target.value)}
                   placeholder="Ceritakan proses bisnis yang ingin diotomasi..."
-                  className="w-full border border-dark rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-lime"
+                  className="w-full border border-[#0B3D2E] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#A3D9B5]"
                 />
               </div>
               <button
                 type="submit"
-                className="font-mono-btn w-full bg-dark text-white hover:bg-lime hover:text-dark border border-dark font-bold text-sm py-3.5 rounded-xl transition-colors cursor-pointer"
+                className="font-mono-btn w-full bg-[#0B3D2E] text-[#F4F1E6] hover:bg-[#A3D9B5] hover:text-[#0B3D2E] border border-[#0B3D2E] font-bold text-sm py-3.5 rounded-xl transition-colors cursor-pointer"
               >
                 Kirim Permintaan ↗
               </button>

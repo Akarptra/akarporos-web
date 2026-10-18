@@ -9,9 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        lime: "#B9FF66",
-        dark: "#07261E",
-        light: "#F4F6F4",
+        lime: "#A3D9B5", // Mint Sage (perfect harmonic light tone of Forest Green #0B3D2E)
+        dark: "#0B3D2E", // Primary Forest Green
+        deep: "#07261E", // Deep Green
+        light: "#EAF1EB", // Soft Sage card surface
+        canvas: "#F7F9F6", // Clean warm ivory-green canvas
         forest: {
           DEFAULT: "#0B3D2E",
           hover: "#0E4D3A",
@@ -32,20 +34,17 @@ const config: Config = {
           light: "#668D79",
           dark: "#3B5548",
         },
-        deepgreen: {
-          DEFAULT: "#07261E",
-          surface: "#092E25",
-        },
       },
       fontFamily: {
         sans: ['"Space Grotesk"', "Inter", "sans-serif"],
         mono: ['"Space Mono"', "monospace"],
       },
       boxShadow: {
-        brutal: "0 6px 0 0 #07261E",
-        "brutal-sm": "0 4px 0 0 #07261E",
-        "brutal-hover": "0 8px 0 0 #07261E",
-        "brutal-dark": "0 6px 0 0 #0B3D2E",
+        brutal: "0 6px 0 0 #0B3D2E",
+        "brutal-sm": "0 4px 0 0 #0B3D2E",
+        "brutal-hover": "0 8px 0 0 #0B3D2E",
+        "brutal-copper": "0 6px 0 0 #C7925B",
+        "brutal-dark": "0 6px 0 0 #07261E",
       },
     },
   },
